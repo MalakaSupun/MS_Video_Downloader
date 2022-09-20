@@ -1,2 +1,3 @@
 # MS_Video_Downloader
 This is a fun project, that can be used to download YouTube videos with the help of the yt-dlp..................
+Form version 1.0 you can download video and audios from YouTube.... next version will be improving to download any website.
