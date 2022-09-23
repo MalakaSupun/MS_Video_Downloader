@@ -24,20 +24,18 @@ class MainWindow(QMainWindow):
         self.UTV_Downloads = Thread_ChecksUV(self)
 
         # Youtube Playlist Downloading....................................
-        #self.YTP_Checks = Thread_ChecksUP(self)
+        self.YTP_Checks = Thread_ChecksUP(self)
+        self.UTP_Downloads = Thread_DownloadUP(self)
 
         self.setWindowTitle('MS Downloader')
         icon = QIcon()
         icon.addPixmap(QPixmap("Icons/Window_icon.png"))
         self.setWindowIcon(icon)
         self.tabWidget.setCurrentIndex(6)
-        # self.Other_Main_Icon.setPixmap(QPixmap('Icons/Window_icon_1.png'))
-        # self.YVButton_Icon.setPixmap(QPixmap('Icons/Youtube.png'))
-
+       
         self.HandleRadio()
         self.setDefault()
         self.HandleButtons()
-        #self.Pictures()
         self.thread = {}
 
     # Handle all the redio buttons..........................
@@ -80,6 +78,7 @@ class MainWindow(QMainWindow):
         self.pushButton_Go_1.clicked.connect(self.GO_YTV)
         self.pushButton_Go_2.clicked.connect(self.GO_YTP)
         self.pushButton_YTV_Download_BTN.clicked.connect(self.Download_Yt_Video)
+        self.pushButton_YTP_Downloads.clicked.connect(self.Download_Yt_PlayList)        
 
     # Handle all the normal operations ....................
     def setDefault(self):
