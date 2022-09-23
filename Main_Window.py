@@ -163,26 +163,21 @@ class MainWindow(QMainWindow):
             self.label_Vcomplete_OV.setText("An Error is Occurred")
 
     # Adding all the pictures for the App window ..........
-    '''
-    def Pictures(self):
-        pic = 'Icons/Thumbnail.png'
+    def Set_Thumbs_forTerminates(self):
+        pic = 'Icons\Tumbs\LightingMQ.png'
         pix = QPixmap(pic)
-        #self.Youtube_Vthumbnail.setPixmap(pix)
-        self.Youtube_Pthumbnail.setPixmap(pix)
-        self.FaceBook_Vthumbnail.setPixmap(pix)
-        self.Udemy_thumbnail.setPixmap(pix)
-        self.Other_Vthumbnail.setPixmap(pix)
-        MainWindow.Downloader_Icon = 1'''
+        print(f"Page : {self.tabWidget.currentIndex()}")
+        if self.tabWidget.currentIndex() == 0:
+            self.Youtube_Vthumbnail.setPixmap(pix)
+        elif self.tabWidget.currentIndex() == 1:
+            self.Youtube_Pthumbnail.setPixmap(pix)
 
     # Redio buttons for new name...........................
     def RedioBTN_UTV_AudioOnly_mp3(self):
         Bs_1 = self.sender()
         if Bs_1.isChecked():
-
             print('Checked - YouTube - get Mp3 from video')
-
         else:
-
             print('Un-Checked - YouTube -  Get best audio from video')
 
     def RedioBTN_FBV_AudioOnly_mp3(self):
@@ -381,6 +376,11 @@ class MainWindow(QMainWindow):
     def GO_YTP(self):
         self.thread[3] = Thread_ChecksUP(self)
         self.thread[3].start()
+        PlayListURL = self.lineEdit_YTP_link.text()
+        if PlayListURL != '':
+            Loading_GIf = QMovie("GIFs/Magnify_no_Background.gif")
+            self.Youtube_Pthumbnail.setMovie(Loading_GIf)
+            Loading_GIf.start()
 
 
 def main():
