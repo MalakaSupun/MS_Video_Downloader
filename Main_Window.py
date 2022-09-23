@@ -1,13 +1,17 @@
+
 import sys
 
+# Required PyQt5 classes
 from PyQt5.uic import loadUi
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
+# Classes that created by me.......
 from YT_Check import *
 from UTV_Downloads import *
-#from YP_Check import *
+from YP_Check import *
+from UTP_Downloads import *
 
 
 class MainWindow(QMainWindow):
@@ -350,21 +354,14 @@ class MainWindow(QMainWindow):
         self.thread[1].ProgressCount.connect(self.YTV_ProgressBar)
         self.thread[1].DownloadSpeed.connect(self.YTV_Downloading_Speed)
         self.thread[1].TimeRemains.connect(self.YTV_Downloading_Time_Remains)
-        # self.pushButton_YTV_Download_BTN.setEnabled(False)
-        # self.UTV_Downloads.run()
-
-        # self.Checking_GIF()
-
+      
     def GO_YTV(self):
         self.thread[2] = Thread_ChecksUV(self)
         self.thread[2].start()
         link = self.lineEdit_YTV_link.text()
         if link != '':
             self.Checking_GIF()
-        # self.label_Pcomplete_UTV.setText("................... Video Checking ...................")
-        #   print("................... Video Checking ...................")
-        # self.YTV_Checks.run()
-
+        
     def Checking_GIF(self):
         Loading_GIf = QMovie("GIFs/Magnify_no_Background.gif")
         self.Youtube_Vthumbnail.setMovie(Loading_GIf)
