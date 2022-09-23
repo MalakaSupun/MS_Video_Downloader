@@ -381,7 +381,10 @@ class MainWindow(QMainWindow):
             Loading_GIf = QMovie("GIFs/Magnify_no_Background.gif")
             self.Youtube_Pthumbnail.setMovie(Loading_GIf)
             Loading_GIf.start()
-
+            
+    def Download_Yt_PlayList(self):
+        self.thread[4] = Thread_DownloadUP(self)
+        self.thread[4].start()
 
 def main():
     App = QApplication(sys.argv)
