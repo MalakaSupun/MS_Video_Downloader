@@ -22,6 +22,12 @@ As you can see you can download,
 * YouTube Subtitles with or without video
 * Converted mp3s 
 
-Not only that you can get so many information about the video that you going to download.  
+Not only that you can get so many information about the video that you going to download. 
+1. Title:
+2. Duration:
+3. Views:
+4. Upload Date:
+5. YouTube Channel:
+
 ![Screenshot 2022-10-01 005038](https://user-images.githubusercontent.com/71941117/193341871-ed1453a3-4cdf-4977-b711-3907bff4a92a.jpg)
 
