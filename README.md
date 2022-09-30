@@ -18,8 +18,10 @@ This is the default start page of the application. </br>
 ## YouTube Video Downloading :
 This is the Youtube video downloading  interface.
 As you can see you can download,
-* YouTube 😅
+* YouTube Videos 😅
 * YouTube Subtitles with or without video
-* Converted mp3
+* Converted mp3s 
+
+Not only that you can get so many information about the video that you going to download.  
 ![Screenshot 2022-10-01 005038](https://user-images.githubusercontent.com/71941117/193341871-ed1453a3-4cdf-4977-b711-3907bff4a92a.jpg)
 
