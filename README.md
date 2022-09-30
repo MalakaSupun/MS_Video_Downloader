@@ -29,5 +29,7 @@ Not only that you can get so many information about the video that you going to 
 4. Upload Date:
 5. YouTube Channel:
 
+While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
+
 ![Screenshot 2022-10-01 005038](https://user-images.githubusercontent.com/71941117/193341871-ed1453a3-4cdf-4977-b711-3907bff4a92a.jpg)
 
