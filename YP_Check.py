@@ -65,6 +65,7 @@ class Thread_ChecksUP(QThread):
             self.isPlayList = B["_type"]
             print(f"Your link is representing a : {self.isPlayList}")
 
+            
             if self.isPlayList == "playlist":
                 try:
                     self.YTP_title = B["title"]
@@ -79,11 +80,11 @@ class Thread_ChecksUP(QThread):
                     self.MainCode.label_Channel_YTP.setText(f'{self.channelName}')
                     self.MainCode.label_PlayListViews_YTP.setText(f'{self.YTP_ViewCount:,}')
                     self.MainCode.label_Date_YTP.setText(f'{self.Uploaded_Date}')
-
+                    
                     for thumbs in B["thumbnails"]:
                         self.thumbnails.append(thumbs["url"])
                     self.Thumbnail_To_Download = self.thumbnails[-1]
-
+                    
                     try:
                         response = requests.get(self.Thumbnail_To_Download)
                         with open("Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg", "wb") as thumbnail:
