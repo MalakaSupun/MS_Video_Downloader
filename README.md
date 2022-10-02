@@ -33,3 +33,10 @@ While Downloading the video you can see **_Downloading Speed_**, **_Downloaded F
 
 ![Screenshot 2022-10-01 005038](https://user-images.githubusercontent.com/71941117/193341871-ed1453a3-4cdf-4977-b711-3907bff4a92a.jpg)
 
+## YouTube PlayList Downloading :
+
+![Capture](https://user-images.githubusercontent.com/71941117/193472688-6f114a53-c794-429b-b5ca-e734c9cef42e.JPG)
+
+
+
+
