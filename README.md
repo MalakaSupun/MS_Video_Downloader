@@ -4,7 +4,7 @@
 </p>
 
 <h1 align="center">
- MS_Video_Downloader
+ MS Video Downloader
 </h1>
 
 <p align="center">
