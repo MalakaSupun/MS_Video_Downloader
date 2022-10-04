@@ -1,13 +1,14 @@
 
-<p align="center">
+<h1 align="center">
  MS_Video_Downloader
-</p>
-
+</h1>
+<p align="center">
 This is a fun project, that can be used to download YouTube videos with the help of the great 👑 yt-dlp ....</br>
 Form version 1.0 you can download video and audios from YouTube with or without subtitles....</br>
 Next version will be improving to download any website.</br>
+</p>
 
-### Requirements :
+## Requirements :
 * Python
 * Yt-dlp
 * PyQt 5
