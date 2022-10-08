@@ -70,6 +70,8 @@ As you can see you can download,
 * FaceBook Videos 😅
 * FaceBook mp3s 
 
+**_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
+
 
 ![Screenshot 2022-10-08 034718](https://user-images.githubusercontent.com/71941117/194670239-3ed1b4c7-4a0e-4881-877b-d874d9b03982.jpg)
 
