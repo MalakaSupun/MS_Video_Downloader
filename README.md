@@ -75,4 +75,12 @@ As you can see you can download,
 
 ![Screenshot 2022-10-08 034718](https://user-images.githubusercontent.com/71941117/194670239-3ed1b4c7-4a0e-4881-877b-d874d9b03982.jpg)
 
+## Other Video-Play Downloading:
 
+![Screenshot 2022-10-10 012653](https://user-images.githubusercontent.com/71941117/194776932-ae003d83-f19b-4802-b372-5e605b83251c.jpg)
+
+
+
+## Other Video Downloading:
+
+![Screenshot 2022-10-10 012612](https://user-images.githubusercontent.com/71941117/194776929-63008fd0-a42c-4b79-93de-15e66d111f28.jpg)
