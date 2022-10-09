@@ -70,12 +70,15 @@ As you can see you can download,
 * FaceBook Videos 😅
 * FaceBook mp3s 
 
+While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
+
 **_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
 
 
 ![Screenshot 2022-10-08 034718](https://user-images.githubusercontent.com/71941117/194670239-3ed1b4c7-4a0e-4881-877b-d874d9b03982.jpg)
 
 ## Other Video-Play Downloading:
+While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
 
 **_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
 ![Screenshot 2022-10-10 012653](https://user-images.githubusercontent.com/71941117/194776932-ae003d83-f19b-4802-b372-5e605b83251c.jpg)
@@ -83,6 +86,7 @@ As you can see you can download,
 
 
 ## Other Video Downloading:
+While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
 
 **_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
 ![Screenshot 2022-10-10 012612](https://user-images.githubusercontent.com/71941117/194776929-63008fd0-a42c-4b79-93de-15e66d111f28.jpg)
