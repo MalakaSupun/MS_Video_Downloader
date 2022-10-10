@@ -74,6 +74,11 @@ As you can see you can download,
 * FaceBook Videos 😅
 * FaceBook mp3s 
 
+Not only that you can get so many information about the video that you going to download. 
+1. Title:
+2. Video Duration:
+3. Video Views:
+
 While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
 
 **_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
@@ -83,6 +88,7 @@ While Downloading the video you can see **_Downloading Speed_**, **_Downloaded F
 
 #
 ## Other Video-Play Downloading:
+
 While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
 
 **_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
