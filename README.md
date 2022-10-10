@@ -19,6 +19,7 @@ Next version will be improving to download any website.</br>
 * Python
 * Yt-dlp
 * PyQt 5
+* FFmpeg - Used for converting mp3s
 * requests - Module </br>
 "requests" is optional fot this application , but you can reduce some seconds form video checking occasion.
 
