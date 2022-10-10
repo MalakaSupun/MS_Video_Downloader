@@ -88,7 +88,15 @@ While Downloading the video you can see **_Downloading Speed_**, **_Downloaded F
 
 #
 ## Other Video-Play Downloading:
+Using this you can download videos from most of the web sites.
+* Videos 😅
+* Video mp3 converts 
 
+Not only that you can get so many information about the video that you going to download. 
+1. Title:
+2. Video Duration:
+3. Video Views:
+4. Upload Date:
 While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
 
 **_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
@@ -98,6 +106,17 @@ While Downloading the video you can see **_Downloading Speed_**, **_Downloaded F
 
 #
 ## Other Video Downloading:
+Using this interface you can download video playlists from various sites.
+As you can see you can download,
+* Video Playlist
+* Converted mp3s of PlayList 
+
+Not only that you can get so many information about the video that you going to download. 
+1. Title:
+2. Video Count:
+3. PlayList Views:
+4. Upload Date:
+
 While Downloading the video you can see **_Downloading Speed_**, **_Downloaded File Size_**, **_Time Remaining_** for the video.
 
 **_You need to add password and user-name or browser cookies for downloading personally saved or specified videos. Other-wise video downloading processes not going to happen correctly._**
