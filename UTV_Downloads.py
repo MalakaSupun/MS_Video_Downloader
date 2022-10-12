@@ -1,6 +1,8 @@
-
+# Used pyQt5 packages ......................
 from PyQt5.QtCore import QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap
+
+# Used video downloder package  ............
 import yt_dlp
 import json
 import requests
