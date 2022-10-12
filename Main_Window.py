@@ -1,4 +1,4 @@
-
+# For system operations ................
 import sys
 
 # Required PyQt5 classes
@@ -26,11 +26,14 @@ class MainWindow(QMainWindow):
         # Youtube Playlist Downloading....................................
         self.YTP_Checks = Thread_ChecksUP(self)
         self.UTP_Downloads = Thread_DownloadUP(self)
-
+        
+        # Setting window titles and icon .............
         self.setWindowTitle('MS Downloader')
         icon = QIcon()
         icon.addPixmap(QPixmap("Icons/Window_icon.png"))
         self.setWindowIcon(icon)
+        
+        # Setting current tab to welcome screen...........................
         self.tabWidget.setCurrentIndex(6)
        
         self.HandleRadio()
