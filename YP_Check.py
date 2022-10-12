@@ -1,11 +1,24 @@
+# PyQt5 libraries ............................
 from PyQt5 import QtCore
 from PyQt5.QtCore import QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap
+
+# yt-dlp for download  videos..................
 import yt_dlp
+
+# for run external  commands ..................
 import subprocess
+
+# for get video thumbnails ....................
 import requests
+
+# time module for tasks  ......................
 import time
+
+# for handling json files .....................
 import json
+
+# for maintaining muilti-threading ...........
 import concurrent.futures
 
 
