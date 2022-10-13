@@ -29,6 +29,7 @@ class Thread_ChecksUP(QThread):
         QThread.__init__(self, parent)
         self.MainCode = parent
 
+        # Main video parameters ....................
         self.Thumbnail_To_Download = ''
         self.Formats = ''
         self.The_link = ''
@@ -40,7 +41,10 @@ class Thread_ChecksUP(QThread):
         self.Audio_Size = ''
         self.Audio_Format = ''
         self.Uploaded_Date = ''
+        # Thumbnail list ............................
         self.thumbnails = []
+        
+        # Setting status of the application .........
         self.Video_checked = 0
 
     def run(self):
@@ -58,6 +62,7 @@ class Thread_ChecksUP(QThread):
                 self.Formats = 'bestvideo*+bestaudio/best'
 
             self.get_Video_info()
+            # Setting status of the application .........
             self.Video_checked = 1
 
         else:
