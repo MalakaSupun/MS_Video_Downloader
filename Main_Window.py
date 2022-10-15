@@ -188,22 +188,22 @@ class MainWindow(QMainWindow):
         if Bs_2.isChecked():
             self.lineEdit_FB_Nname.setDisabled(False)
             self.label_47.setDisabled(False)
-            print('Checked - redioBTN_FB_Nname')
+            print('Checked - redioBTN_FB_AudioOnly')
         else:
             self.lineEdit_FB_Nname.setDisabled(True)
             self.label_47.setDisabled(True)
-            print('Un-Checked - redioBTN_FB_Nname')
+            print('Un-Checked - redioBTN_FB_AudioOnly')
 
     def RedioBTN_OV_AudioOnly_mp3(self):
         Bs_3 = self.sender()
         if Bs_3.isChecked():
             self.lineEdit_OV_Nname.setDisabled(False)
             self.label_15.setDisabled(False)
-            print('Checked - redioBTN_OV_Nname')
+            print('Checked - redioBTN_OV_AudioOnly')
         else:
             self.lineEdit_OV_Nname.setDisabled(True)
             self.label_15.setDisabled(True)
-            print('Un-Checked - redioBTN_OV_Nname')
+            print('Un-Checked - redioBTN_OV_AudioOnly')
 
     # Redio buttons for Audio only.........................
     def RedioBTN_UTV_AudioOnly(self):
