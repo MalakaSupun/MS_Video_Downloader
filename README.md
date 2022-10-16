@@ -16,6 +16,7 @@ Next version will be improving to download any website.</br>
 #
 
 ## Requirements :
+This is the basic requirements for this application.
 * Python
 * Yt-dlp
 * PyQt 5
