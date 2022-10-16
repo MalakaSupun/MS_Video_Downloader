@@ -23,6 +23,7 @@ import concurrent.futures
 
 
 class Thread_ChecksUP(QThread):
+    # Signal for playlist ..................
     Playlist_details = QtCore.pyqtSignal(int)
 
     def __init__(self, parent):
@@ -41,6 +42,7 @@ class Thread_ChecksUP(QThread):
         self.Audio_Size = ''
         self.Audio_Format = ''
         self.Uploaded_Date = ''
+        
         # Thumbnail list ............................
         self.thumbnails = []
         
