@@ -9,8 +9,11 @@ import requests
 import time
 import concurrent.futures
 import winsound
+
+# Packages that import by me ...............
 from YT_Check import *
 
+# Formats that used to download videos ......
 Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
            'bestvideo[height<=1080]+bestaudio/best[height<=1080]', 'bestvideo[height<=720]+bestaudio/best[height<=720]',
            'bestvideo[height<=480]+bestaudio/best[height<=480]', 'bestvideo[height<=360]+bestaudio/best[height<=360]',
@@ -28,8 +31,8 @@ class Thread_DownloadUV(QtCore.QThread):
         self.MainCode = parent
         self.VideoFormat = None
         self.Format_Requested = None
-        self.Video_folder = None
-        self.The_link = None
+        self.Video_folder = ''
+        self.The_link = ''
 
         self.Requested_Sub_lang = ''
 
