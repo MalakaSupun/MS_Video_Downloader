@@ -29,17 +29,17 @@ class Thread_DownloadUV(QtCore.QThread):
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
-        self.VideoFormat = None
-        self.Format_Requested = None
+           
+        self.VideoFormat = ''
+        self.Format_Requested = ''
         self.Video_folder = ''
         self.The_link = ''
-
         self.Requested_Sub_lang = ''
 
         self.is_running = True
-
+           
+        # Making new object for class .........
         self.YTV_Checks = Thread_ChecksUV(self)
-        # print('processing..... Downloader Thread......')
 
         langss = self.YTV_Checks.Commands_for_subs
         print(f"Sub Coms : {langss}")
