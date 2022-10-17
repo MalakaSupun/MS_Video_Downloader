@@ -21,7 +21,7 @@ This is the basic requirements for this application.
 * Yt-dlp
 * PyQt 5
 * FFmpeg - Used for converting mp3s
-* requests - Module </br>
+* requests - Module
 "requests" is optional fot this application , but you can reduce some seconds form video checking occasion.
 
 
