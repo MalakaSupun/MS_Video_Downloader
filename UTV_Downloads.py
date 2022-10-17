@@ -21,6 +21,7 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
 
 
 class Thread_DownloadUV(QtCore.QThread):
+    # Signals for application interface .............       
     ProgressCount = QtCore.pyqtSignal(int)
     DownloadSpeed = QtCore.pyqtSignal(str)
     TimeRemains = QtCore.pyqtSignal(str)
@@ -45,11 +46,12 @@ class Thread_DownloadUV(QtCore.QThread):
         print(f"Sub Coms : {langss}")
 
         x = self.MainCode.comboBox_Quality_Sub_YV.currentIndex()
-        print(x)
+        # print(x)
 
     def run(self):
-
         cnt = 0
+
+        # Video link ...................
         link = self.MainCode.lineEdit_YTV_link.text()
         if link != '':
             self.The_link = link.replace('&', '"&"')
@@ -57,7 +59,7 @@ class Thread_DownloadUV(QtCore.QThread):
             self.MainCode.label_Pcomplete_UTV.setText("................... Downloading Started ...................")
         else:
             print("Enter a Link to download..........")
-
+                      
         self.Video_folder = self.MainCode.lineEdit_YTV_F.text()
         #print(f'Downloading Location : "{self.Video_folder}"')
 
@@ -114,10 +116,8 @@ class Thread_DownloadUV(QtCore.QThread):
     def Downloader(self):
         print(self.VideoFormat)
 
-
         if self.VideoFormat != 'bestaudio/best':
             ydl_opts = {
-
                 'noplaylist': True, 'no_warnings': True,
                 #'ignoreerrors': True, 'quiet': True,
                 'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
@@ -161,10 +161,12 @@ class Thread_DownloadUV(QtCore.QThread):
 
             #print(f"downloaded so far :- {d['_downloaded_bytes_str']}")
             #print(f"status :- {d['status']}")
-
+           
+            # Speed of the video download ...........
             Speed = d['_speed_str']
             self.DownloadSpeed.emit(Speed)
-
+      
+            # Percentage of the downloaded video .....
             per_ct = d['_percent_str']
             split = per_ct.split('%')
             pct = split[0]
