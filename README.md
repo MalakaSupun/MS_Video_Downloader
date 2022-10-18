@@ -32,6 +32,8 @@ This is the first page that shows when application stats.
 
 ![Screenshot 2022-09-22 003814](https://user-images.githubusercontent.com/71941117/191589864-d9a9bf9b-282d-4f6b-b8a9-c7a5fd103c5f.jpg)
 
+Buttons in left-hand side are used to move between the interfaces of the application. These buttons are used to navigate to the various available platforms and sites.
+
 #
 ## YouTube Video Downloading :
 This is the Youtube video downloading  interface.
