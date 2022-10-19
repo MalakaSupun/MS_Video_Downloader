@@ -68,8 +68,8 @@ class MainWindow(QMainWindow):
         self.radioButton_UTV_AudioOnly_MP3.toggled.connect(self.RedioBTN_UTV_AudioOnly_mp3)
 
     def HandleButtons(self):
+        
         # Switching between Tabs......................
-
         self.pushButton_Welcome.clicked.connect(self.Welcome)
         self.pushButton_About.clicked.connect(self.openAbout)
         self.pushButton_Yt_Video.clicked.connect(self.openYT_V_download)
@@ -77,6 +77,7 @@ class MainWindow(QMainWindow):
         self.pushButton_Facebook.clicked.connect(self.openFB_V_download)
         self.pushButton_Udemy.clicked.connect(self.openUdemy_V_download)
         self.pushButton_OtherD.clicked.connect(self.openOther_V_download)
+        
         # Browse buttons for file locations............
         self.pushButton_YT_BR.clicked.connect(self.Browse_YTV)
         self.pushButton_YT_PR.clicked.connect(self.Browse_YTP)
@@ -176,7 +177,7 @@ class MainWindow(QMainWindow):
     def Set_Thumbs_forTerminates(self):
         pic = 'Icons\Tumbs\LightingMQ.png'
         pix = QPixmap(pic)
-        print(f"Page : {self.tabWidget.currentIndex()}")
+        # print(f"Page : {self.tabWidget.currentIndex()}")
         if self.tabWidget.currentIndex() == 0:
             self.Youtube_Vthumbnail.setPixmap(pix)
         elif self.tabWidget.currentIndex() == 1:
@@ -351,14 +352,17 @@ class MainWindow(QMainWindow):
 
     def Welcome(self):
         self.tabWidget.setCurrentIndex(6)
-
+ # ______________________________________________YouTube Video________________________________________________
+ # Start downloading YouTube videos .....................       
     def Download_Yt_Video(self):
         self.thread[1] = Thread_DownloadUV(self)
         self.thread[1].start()
+        # Three signals for the application interface ......................
         self.thread[1].ProgressCount.connect(self.YTV_ProgressBar)
         self.thread[1].DownloadSpeed.connect(self.YTV_Downloading_Speed)
         self.thread[1].TimeRemains.connect(self.YTV_Downloading_Time_Remains)
-      
+        
+ # Getting all the necessary information for app interface ..................     
     def GO_YTV(self):
         self.thread[2] = Thread_ChecksUV(self)
         self.thread[2].start()
