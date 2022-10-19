@@ -369,7 +369,8 @@ class MainWindow(QMainWindow):
         link = self.lineEdit_YTV_link.text()
         if link != '':
             self.Checking_GIF()
-        
+            
+    # Checking for video information .........................    
     def Checking_GIF(self):
         Loading_GIf = QMovie("GIFs/Magnify_no_Background.gif")
         self.Youtube_Vthumbnail.setMovie(Loading_GIf)
@@ -386,7 +387,13 @@ class MainWindow(QMainWindow):
     def YTV_Downloading_Time_Remains(self, The_Time):
         TimeRemaining = The_Time
         self.label_RTime_YTV_2.setText(TimeRemaining)
-
+        
+# ______________________________________________YouTube Playlist _______________________________________________
+    
+    def Download_Yt_PlayList(self):
+        self.thread[4] = Thread_DownloadUP(self)
+        self.thread[4].start() 
+    
     def GO_YTP(self):
         self.thread[3] = Thread_ChecksUP(self)
         self.thread[3].start()
@@ -395,10 +402,7 @@ class MainWindow(QMainWindow):
             Loading_GIf = QMovie("GIFs/Magnify_no_Background.gif")
             self.Youtube_Pthumbnail.setMovie(Loading_GIf)
             Loading_GIf.start()
-            
-    def Download_Yt_PlayList(self):
-        self.thread[4] = Thread_DownloadUP(self)
-        self.thread[4].start()
+              
 
 def main():
     App = QApplication(sys.argv)
