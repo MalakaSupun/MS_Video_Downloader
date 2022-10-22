@@ -15,11 +15,6 @@ import os
 # For executive threads ..............
 import concurrent.futures
 
-'''Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
-           'bestvideo[height<=1080]+bestaudio/best[height<=1080]', 'bestvideo[height<=720]+bestaudio/best[height<=720]',
-           'bestvideo[height<=480]+bestaudio/best[height<=480]', 'bestvideo[height<=360]+bestaudio/best[height<=360]',
-           'bestvideo[height<=244]+bestaudio/best[height<=244]', 'bestvideo[height<=144]+bestaudio/best[height<=144]']'''
-
 lang = []
 Auto_langs = []
 
