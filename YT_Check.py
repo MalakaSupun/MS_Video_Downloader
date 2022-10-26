@@ -17,7 +17,7 @@ import concurrent.futures
 
 lang = []
 Auto_langs = []
-
+# Subtitles that need to download......
 Alw_Sub_Languages = ['en', 'si', 'ta']
 Auto_Sub_Langs = []
 Not_In_Direct_Sub = []
@@ -25,12 +25,14 @@ Not_In_Auto_Sub = []
 
 
 class Thread_ChecksUV(QThread):
+    # Thread Signal for application....
     countChanged = QtCore.pyqtSignal(int)
 
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
 
+        # Parameters for application.....
         self.Filtered_Auto_Subs = []
         self.Available_Subs = []
         self.Video_checked = 0
