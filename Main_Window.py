@@ -140,6 +140,7 @@ class MainWindow(QMainWindow):
     # Browse all the dialogs for file saving place ........
     def Browse_YTV(self):
         try:
+            # Browse folder for video to download
             file_YTV = str(QFileDialog.getExistingDirectory(self, " Select Directory to Save Video "))
             self.lineEdit_YTV_F.setText(str(file_YTV))
         except:
