@@ -16,16 +16,20 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
 
 
 class Thread_DownloadUV(QtCore.QThread):
-    ProgressCount = QtCore.pyqtSignal(int)
-    DownloadSpeed = QtCore.pyqtSignal(str)
-    TimeRemains = QtCore.pyqtSignal(str)
-    Downloaded_So_Far = QtCore.pyqtSignal(str)
+    # Signals for application ....................       
+    ProgressCount = QtCore.pyqtSignal(int)      # Progress count...........
+    DownloadSpeed = QtCore.pyqtSignal(str)      # Downloading speed .......
+    TimeRemains = QtCore.pyqtSignal(str)        # Time remaining ..........
+    Downloaded_So_Far = QtCore.pyqtSignal(str)  # Downloaded Data amount...
 
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
+           
+        # Object for YTV_Checkes class ..............   
         self.YTV_Checks = Thread_ChecksUV(self)
-
+           
+        # Parameters for application.................
         self.Link = None
         self.VideoFormat = None
         self.Format_Requested = None
