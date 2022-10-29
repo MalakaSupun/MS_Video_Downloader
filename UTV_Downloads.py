@@ -1,23 +1,14 @@
-# Used pyQt5 packages ......................
 from PyQt5.QtCore import QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap
-
-# Used video downloder package  ............
 import yt_dlp
-# Json for getting details for application....
 import json
-# For getting video thumbnail.......
 import requests
 import time
-# For executing threads.........
 import concurrent.futures
-# For sound effects........
 import winsound
-
-# Packages that import by me ...............
 from YT_Check import *
+from plyer import notification
 
-# Formats that used to download videos ......
 Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
            'bestvideo[height<=1080]+bestaudio/best[height<=1080]', 'bestvideo[height<=720]+bestaudio/best[height<=720]',
            'bestvideo[height<=480]+bestaudio/best[height<=480]', 'bestvideo[height<=360]+bestaudio/best[height<=360]',
@@ -25,7 +16,6 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
 
 
 class Thread_DownloadUV(QtCore.QThread):
-    # Signals for application interface .............       
     ProgressCount = QtCore.pyqtSignal(int)
     DownloadSpeed = QtCore.pyqtSignal(str)
     TimeRemains = QtCore.pyqtSignal(str)
@@ -34,42 +24,34 @@ class Thread_DownloadUV(QtCore.QThread):
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
-           
-        self.VideoFormat = ''
-        self.Format_Requested = ''
-        self.Video_folder = ''
-        self.The_link = ''
-        self.Requested_Sub_lang = ''
-
-        self.is_running = True
-           
-        # Making new object for class .........
         self.YTV_Checks = Thread_ChecksUV(self)
 
-        langss = self.YTV_Checks.Commands_for_subs
-        print(f"Sub Coms : {langss}")
-
-        x = self.MainCode.comboBox_Quality_Sub_YV.currentIndex()
-        # print(x)
+        self.Link = None
+        self.VideoFormat = None
+        self.Format_Requested = None
+        self.Video_folder = None
+        self.The_link = None
+        self.Requested_Sub_lang = ''
+        self.is_running = True
+        self.VideoDownloaded = 0
 
     def run(self):
-        cnt = 0
-
-        # Video link ...................
+        self.VideoDownloaded = 0
         link = self.MainCode.lineEdit_YTV_link.text()
+        self.Link = link
         if link != '':
             self.The_link = link.replace('&', '"&"')
-            #print(self.The_link)
+            # print(self.The_link)
             self.MainCode.label_Pcomplete_UTV.setText("................... Downloading Started ...................")
         else:
             print("Enter a Link to download..........")
-                      
+
         self.Video_folder = self.MainCode.lineEdit_YTV_F.text()
-        #print(f'Downloading Location : "{self.Video_folder}"')
+        # print(f'Downloading Location : "{self.Video_folder}"')
 
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
             if self.Video_folder != '':
-                #print("Audio Only")
+                # print("Audio Only")
                 self.Format_Selection()
                 self.Downloader()
                 self.MainCode.label_Pcomplete_UTV.setText("................... Format Downloaded ...................")
@@ -85,9 +67,13 @@ class Thread_DownloadUV(QtCore.QThread):
                 self.Downloader()
                 self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")
                 self.MainCode.progressBar_YT_V.setValue(0)
+                self.VideoDownloaded = 1
+                self.Notifications()
+
 
             else:
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
+                self.Notifications()
                 """while True:
                     cnt += 1
                     if cnt < 100:
@@ -97,6 +83,22 @@ class Thread_DownloadUV(QtCore.QThread):
                     elif cnt == 100:
                         self.ProgressCount.emit(cnt)
                         cnt = 0"""
+
+    def SelectSubtitles(self):
+        Lang_Text = self.MainCode.comboBox_Quality_Sub_YV.currentText()
+        print(Lang_Text)
+        if Lang_Text == "Tamil":
+            self.Requested_Sub_lang = 'ta'
+        elif Lang_Text == "Sinhala":
+            self.Requested_Sub_lang = 'si'
+        elif Lang_Text == "English":
+            self.Requested_Sub_lang = 'en'
+        elif Lang_Text == "English-Auto-Gen":
+            self.Requested_Sub_lang = 'en'
+        elif Lang_Text == "Sinhala-Auto-Gen":
+            self.Requested_Sub_lang = 'si'
+        elif Lang_Text == "Tamil-Auto-Gen":
+            self.Requested_Sub_lang = 'ta'
 
     def Format_Selection(self):
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
@@ -118,33 +120,81 @@ class Thread_DownloadUV(QtCore.QThread):
                 self.VideoFormat = 'bestvideo[height<=144]+bestaudio/best[height<=144]'
 
     def Downloader(self):
+
         print(self.VideoFormat)
+        if self.MainCode.radioButton_UTV_subs.isChecked():
+            self.SelectSubtitles()
+            print(f"Selected Sub Language : {self.Requested_Sub_lang}")
 
-        if self.VideoFormat != 'bestaudio/best':
-            ydl_opts = {
-                'noplaylist': True, 'no_warnings': True,
-                #'ignoreerrors': True, 'quiet': True,
-                'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
-                'format': self.VideoFormat, 'ext': 'mp4/webm',
-                'progress_hooks': [self.My_Progress_hook],
-                'writesubtitles': True,
-                'writeautomaticsub': True, 'subtitleslangs': {self.Requested_Sub_lang},
-            }
+        if not self.MainCode.radioButton_YTV_subM.isChecked():
+            print("Download sub + video")
+            if self.VideoFormat != 'bestaudio/best':
 
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download(self.The_link)
+                ydl_opts = {
+                    'noplaylist': True,
+                    #'quiet': True,
+                    'ignoreerrors': True,  'no_warnings': True,
+                    'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
+                    'writesubtitles': True,
+                    'writeautomaticsub': True, 'subtitleslangs': {self.Requested_Sub_lang},
+                    'format': self.VideoFormat, 'ext': 'mp4',
+                    'progress_hooks': [self.My_Progress_hook],
+                }
 
-        elif self.VideoFormat == 'bestaudio/best':
-            ydl_opts = {'format': 'bestaudio/best',
-                        'postprocessors': [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', }],
-                        'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
-                        'progress_hooks': [self.My_Progress_hook],
-                        'postprocessor_hooks': [self.My_Progress_hook_Audios],
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    ydl.download(self.The_link)
 
-                        }
+            elif self.VideoFormat == 'bestaudio/best':
 
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download(self.The_link)
+                ydl_opts = {
+                    'noplaylist': True,
+                    #'quiet': True,
+                    'ignoreerrors': True,  'no_warnings': True,
+                    'format': 'bestaudio/best',
+                    'postprocessors': [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', }],
+                    'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
+                    'progress_hooks': [self.My_Progress_hook],
+                    'postprocessor_hooks': [self.My_Progress_hook_Audios],
+                }
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    ydl.download(self.The_link)
+
+        elif self.MainCode.radioButton_YTV_subM.isChecked():
+            print("Download sub + video")
+            if self.VideoFormat != 'bestaudio/best':
+
+                ydl_opts = {
+                    'skip_download': True,
+                    'noplaylist': True,
+                    #'quiet': True,
+                    'ignoreerrors': True,  'no_warnings': True,
+                    'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
+                    'writesubtitles': True,
+                    'writeautomaticsub': True, 'subtitleslangs': {self.Requested_Sub_lang},
+                    'format': self.VideoFormat,
+                    'ext': 'mp4',
+                    'progress_hooks': [self.My_Progress_hook],
+                }
+
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    ydl.download(self.The_link)
+
+            elif self.VideoFormat == 'bestaudio/best':
+
+                ydl_opts = {
+                    'skip_download': True,
+                    'noplaylist': True,
+                    'writesubtitles': True,
+                    'writeautomaticsub': True, 'subtitleslangs': {self.Requested_Sub_lang},
+                    'ignoreerrors': True,  'no_warnings': True,
+                    #'quiet': True,
+                    'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
+                    'progress_hooks': [self.My_Progress_hook],
+
+                }
+
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    ydl.download(self.The_link)
 
     def My_Progress_hook_Audios(self, d):
 
@@ -163,14 +213,9 @@ class Thread_DownloadUV(QtCore.QThread):
             self.MainCode.label_DBytes_YTV.setText("0")
         elif d['status'] == "downloading":
 
-            #print(f"downloaded so far :- {d['_downloaded_bytes_str']}")
-            #print(f"status :- {d['status']}")
-           
-            # Speed of the video download ...........
             Speed = d['_speed_str']
             self.DownloadSpeed.emit(Speed)
-      
-            # Percentage of the downloaded video .....
+
             per_ct = d['_percent_str']
             split = per_ct.split('%')
             pct = split[0]
@@ -188,7 +233,6 @@ class Thread_DownloadUV(QtCore.QThread):
         if d['status'] == "Error":
             print("\n..........Error..........Error..........Error..........\n")
             winsound.PlaySound("Sounds/Error.mp3", winsound.SND_FILENAME)
-
 
     def set_current_Size(self):
         if Thread_ChecksUV.Video_checked == 1:
@@ -214,3 +258,28 @@ class Thread_DownloadUV(QtCore.QThread):
             if Index == 6:
                 self.MainCode.label_Views_Selected_YTV_Size.setText(
                     f'Size of video selected : {Thread_ChecksUV.V144p_Size}  MB')
+
+    def Notifications(self):
+        if self.VideoDownloaded == 1:
+
+            notification.notify(
+                title="YouTube Video Download",
+                message=" Video Downloaded !!! ",
+                app_icon="E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Icons\Tumbs\Main_icon.ico",
+                timeout=10,
+                app_name="Ms Video Download",
+                ticker="Video Download",
+                toast=True
+            )
+        elif self.VideoDownloaded == 0:
+            if self.Video_folder or self.Link == '':
+                notification.notify(
+                    title="YouTube Video Download",
+                    message=" Add Location and Link to Download Video !!! ",
+                    app_icon="E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Icons\Tumbs\Main_icon.ico",
+                    timeout=10,
+                    app_name="Ms Video Download",
+                    ticker="Video Download",
+                    toast=True
+                )
+
