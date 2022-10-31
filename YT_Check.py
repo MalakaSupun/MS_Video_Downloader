@@ -2,13 +2,13 @@
 from PyQt5 import QtCore
 from PyQt5.QtCore import QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap
-# Downloading module ...............
+# Downloading module ..................
 import yt_dlp
 # Json for information gathering.......
 import json
 # For Thumbnail downloading ...........
 import requests
-
+# Importanting time package ..........
 import time
 # For file managements ...............
 import os
@@ -155,7 +155,8 @@ class Thread_ChecksUV(QThread):
                 self.V240p_Size = round(int(B["filesize_approx"]) / (1024 * 1024), 2)
             if VideoFormat == 'bestvideo[height<=144]+bestaudio/best[height<=144]':
                 self.V144p_Size = round(int(B["filesize_approx"]) / (1024 * 1024), 2)
-
+                
+    # Clear all the lists for re-checking ..............
     def ClearLists(self):
         lang.clear()
         Auto_langs.clear()
@@ -166,7 +167,7 @@ class Thread_ChecksUV(QThread):
         self.Commands_for_subs.clear()
 
     def Set_Lables(self):
-        self.ClearLists()
+        self.ClearLists()                    # Clear list for new labels .......................
         Video_title = self.YT_title
         Youtube_Channel = self.Yt_Channle
         View_Count = self.YTV_ViewCount
@@ -183,6 +184,7 @@ class Thread_ChecksUV(QThread):
         V_Size_240p = self.V240p_Size
         V_Size_144p = self.V144p_Size
 
+        # Try to download thumbnail by Request module ...............
         try:
             thumbstT = time.perf_counter()
             # Thumbnail_Link = B["thumbnail"]
@@ -194,7 +196,8 @@ class Thread_ChecksUV(QThread):
             self.MainCode.Youtube_Vthumbnail.setPixmap(QPixmap('YTV_Thumbnail.jpg'))
             thumbEdT = time.perf_counter()
             print(round(thumbEdT - thumbstT, 3))  # 0.443s
-
+          
+        # Downloading thumbnail using yt-dlp ..............................
         except:
             # if self.Video_checked == 1:
             try:
