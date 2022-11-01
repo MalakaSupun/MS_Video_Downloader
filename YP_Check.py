@@ -101,17 +101,20 @@ class Thread_ChecksUP(QThread):
                     self.MainCode.label_PlayListViews_YTP.setText(f'{self.YTP_ViewCount:,}')
                     self.MainCode.label_Date_YTP.setText(f'{self.Uploaded_Date}')
                     
+                    # Set list for thumbnail urls ...................................................................
                     for thumbs in B["thumbnails"]:
                         self.thumbnails.append(thumbs["url"])
+                    # selecting right one out of all thumbnails ....................................................    
                     self.Thumbnail_To_Download = self.thumbnails[-1]
                     
+                    # downloading video thumbnails .................
                     try:
                         response = requests.get(self.Thumbnail_To_Download)
                         with open("Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg", "wb") as thumbnail:
                             thumbnail.write(response.content)
 
                         self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap('Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg'))
-
+                    # usef yt-dlp if 'request' not worked ...........
                     except:
                         Video_folder = r'Thumbnail\Youtube_PlayList'
                         ydl_opts = {'writethumbnail': True,
