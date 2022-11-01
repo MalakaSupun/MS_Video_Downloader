@@ -52,7 +52,7 @@ class Thread_ChecksUV(QThread):
         self.YT_title = " "
         self.BestV_Size = " "
         self.BestV_Format = " "
-        self.V144p_Size = "Not Available"
+        self.V144p_Size = " "
         self.Audio_Size = " "
         self.Audio_Format = " "
         self.The_link = " "
@@ -369,7 +369,7 @@ class Thread_ChecksUV(QThread):
             if self.F_Requested == 6:
                 self.MainCode.label_Views_Selected_YTV_Size.setText(
                     f'Size of video selected : {self.V144p_Size}  MB')
-
+    # Default labels for application .................................
     def Set_Default_Labels(self):
         self.MainCode.label_Title_YTV.setText('')
         self.MainCode.label_Views_YTV.setText('')
