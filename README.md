@@ -17,11 +17,12 @@ Next version will be improving to download any website.</br>
 
 ## Requirements :
 This is the basic requirements for this application.
-* Python
-* Yt-dlp
-* PyQt 5
+* Python - Version 3.95 used to built this
+* Yt-dlp - Main video downloading platform 
+* PyQt 5 - Used to build the UI of application
+* Plyer - Used for notifications 
 * FFmpeg - Used for converting mp3s
-* requests - Module
+* requests 
 "requests" is optional fot this application , but you can reduce some seconds form video checking occasion.
 
 
