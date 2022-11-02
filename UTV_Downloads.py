@@ -135,7 +135,7 @@ class Thread_DownloadUV(QtCore.QThread):
         if not self.MainCode.radioButton_YTV_subM.isChecked():
             print("Download sub + video")
             if self.VideoFormat != 'bestaudio/best':
-
+                # Yt-dlp optinos for downloading......................................
                 ydl_opts = {
                     'noplaylist': True,
                     #'quiet': True,
@@ -151,7 +151,7 @@ class Thread_DownloadUV(QtCore.QThread):
                     ydl.download(self.The_link)
 
             elif self.VideoFormat == 'bestaudio/best':
-
+                # Yt-dlp optinos for downloading......................................
                 ydl_opts = {
                     'noplaylist': True,
                     #'quiet': True,
@@ -168,7 +168,7 @@ class Thread_DownloadUV(QtCore.QThread):
         elif self.MainCode.radioButton_YTV_subM.isChecked():
             print("Download sub + video")
             if self.VideoFormat != 'bestaudio/best':
-
+                # Yt-dlp optinos for downloading......................................
                 ydl_opts = {
                     'skip_download': True,
                     'noplaylist': True,
@@ -186,7 +186,7 @@ class Thread_DownloadUV(QtCore.QThread):
                     ydl.download(self.The_link)
 
             elif self.VideoFormat == 'bestaudio/best':
-
+                # Yt-dlp optinos for downloading......................................
                 ydl_opts = {
                     'skip_download': True,
                     'noplaylist': True,
@@ -201,7 +201,7 @@ class Thread_DownloadUV(QtCore.QThread):
 
                 with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                     ydl.download(self.The_link)
-
+    # progress functions ....................................................
     def My_Progress_hook_Audios(self, d):
 
         if d['status'] == 'finished':
