@@ -18,3 +18,10 @@ import winsound
 from YT_Check import *
 # For notification ........................
 from plyer import 
+
+# All the formats ..........................
+Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
+           'bestvideo[height<=1080]+bestaudio/best[height<=1080]', 'bestvideo[height<=720]+bestaudio/best[height<=720]',
+           'bestvideo[height<=480]+bestaudio/best[height<=480]', 'bestvideo[height<=360]+bestaudio/best[height<=360]',
+           'bestvideo[height<=240]+bestaudio/best[height<=240]', 'bestvideo[height<=144]+bestaudio/best[height<=144]']
+
