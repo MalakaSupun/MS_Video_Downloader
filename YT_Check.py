@@ -199,7 +199,7 @@ class Thread_ChecksUV(QThread):
           
         # Downloading thumbnail using yt-dlp ..............................
         except:
-            # if self.Video_checked == 1:
+           
             try:
                 try:
                     os.remove(
