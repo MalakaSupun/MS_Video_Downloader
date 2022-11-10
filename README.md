@@ -140,5 +140,11 @@ While Downloading the video you can see **_Downloading Speed_**, **_Downloaded F
 ## Helps :
 
 
+#
+## Icons and Thumbnails :
+All the icons and thumbnails are from the internet....
+
+
+
 
 
