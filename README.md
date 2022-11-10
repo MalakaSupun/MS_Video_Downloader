@@ -11,7 +11,13 @@
 This is a fun project, that can be used to download YouTube videos with the help of the great 👑 yt-dlp ....</br>
 Form version 1.0 you can download video and audios from YouTube with or without subtitles....</br>
 Next version will be improving to download any website.</br>
+The best audio will download with the specific video resolution.
 </p>
+
+#
+
+## Installation:
+You need to install things under "Requirements" to work this application properly.
 
 #
 
