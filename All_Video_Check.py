@@ -26,8 +26,9 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
            'bestvideo[height<=480]+bestaudio/best[height<=480]', 'bestvideo[height<=360]+bestaudio/best[height<=360]',
            'bestvideo[height<=240]+bestaudio/best[height<=240]', 'bestvideo[height<=144]+bestaudio/best[height<=144]']
 
-
+# All direct sub languages available for video.....
 lang = []
+# All auto sub languages available for video.....
 Auto_langs = []
 # Subtitles that need to download......
 Alw_Sub_Languages = ['en', 'si', 'ta']
