@@ -21,6 +21,13 @@ import json
 # for maintaining muilti-threading ...........
 import concurrent.futures
 
+lang = []
+Auto_langs = []
+# Subtitles that need to download......
+Alw_Sub_Languages = ['en', 'si', 'ta']
+Auto_Sub_Langs = []
+Not_In_Direct_Sub = []
+Not_In_Auto_Sub = []
 
 class Thread_ChecksUP(QThread):
     # Signal for playlist ..................
