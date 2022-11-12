@@ -34,6 +34,7 @@ lang = []
 Auto_langs = []
 # Subtitles that need to download......
 Alw_Sub_Languages = ['en', 'si', 'ta']
+# Available languages available for video.....
 Auto_Sub_Langs = []
 Not_In_Direct_Sub = []
 Not_In_Auto_Sub = []
