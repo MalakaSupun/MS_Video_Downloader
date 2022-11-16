@@ -2,16 +2,20 @@
 import sys
 
 # Required PyQt5 classes
+# loading Ui...............
 from PyQt5.uic import loadUi
+# Importing QtGui .........
 from PyQt5.QtGui import *
+# Importing QtCore .........
 from PyQt5.QtCore import *
+# Importing QtWidgets .......
 from PyQt5.QtWidgets import *
 
 # Classes that created by me.......
-from YT_Check import *
-from UTV_Downloads import *
-from YP_Check import *
-from UTP_Downloads import *
+from YT_Check import *                 #
+from UTV_Downloads import *            #
+from YP_Check import *                 #
+from UTP_Downloads import *            #
 
 
 class MainWindow(QMainWindow):
