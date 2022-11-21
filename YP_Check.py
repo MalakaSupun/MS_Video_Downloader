@@ -1,7 +1,7 @@
 # PyQt5 libraries ............................
-from PyQt5 import QtCore
-from PyQt5.QtCore import QThread, pyqtSignal
-from PyQt5.QtGui import QPixmap
+from PyQt5 import QtCore                       # QtCore importing
+from PyQt5.QtCore import QThread, pyqtSignal   # QThread and PyQt Signal import
+from PyQt5.QtGui import QPixmap                # QPixmp import
 
 # yt-dlp for download  videos..................
 import yt_dlp
@@ -25,8 +25,11 @@ lang = []
 Auto_langs = []
 # Subtitles that need to download......
 Alw_Sub_Languages = ['en', 'si', 'ta']
+#
 Auto_Sub_Langs = []
+#
 Not_In_Direct_Sub = []
+#
 Not_In_Auto_Sub = []
 
 class Thread_ChecksUP(QThread):
