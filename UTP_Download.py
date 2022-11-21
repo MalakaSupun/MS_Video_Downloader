@@ -1,7 +1,7 @@
 
 # Importing PyQt5........................
-from PyQt5.QtCore import QThread, pyqtSignal
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import QThread, pyqtSignal # QThread, pyqtSignal packages importings
+from PyQt5.QtGui import QPixmap              # QPixmap package importing
 # Video downloading package .............
 import yt_dlp
 # Importing json ........................
@@ -20,10 +20,13 @@ from YT_Check import *
 from plyer import 
 
 # All the formats ..........................
-Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
-           'bestvideo[height<=1080]+bestaudio/best[height<=1080]', 'bestvideo[height<=720]+bestaudio/best[height<=720]',
-           'bestvideo[height<=480]+bestaudio/best[height<=480]', 'bestvideo[height<=360]+bestaudio/best[height<=360]',
-           'bestvideo[height<=240]+bestaudio/best[height<=240]', 'bestvideo[height<=144]+bestaudio/best[height<=144]']
+Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',              # Best Video
+           'bestvideo[height<=1080]+bestaudio/best[height<=1080]',     # 1080p
+           'bestvideo[height<=720]+bestaudio/best[height<=720]',       # 720p
+           'bestvideo[height<=480]+bestaudio/best[height<=480]',       # 480p 
+           'bestvideo[height<=360]+bestaudio/best[height<=360]',       # 360p
+           'bestvideo[height<=240]+bestaudio/best[height<=240]',       # 244p
+           'bestvideo[height<=144]+bestaudio/best[height<=144]']       # 144p
 
 class Thread_DownloadUP(QtCore.QThread):
     # Signals for application ....................       
