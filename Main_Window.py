@@ -12,10 +12,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
 # Classes that created by me.......
-from YT_Check import *                 #
-from UTV_Downloads import *            #
-from YP_Check import *                 #
-from UTP_Downloads import *            #
+from YT_Check import *                 # For checking YouTube videos 
+from UTV_Downloads import *            # For Downloading YouTube videos 
+from YP_Check import *                 # For checking YouTube Playlists 
+from UTP_Downloads import *            # For Downloading YouTube Playlists 
 
 
 class MainWindow(QMainWindow):
