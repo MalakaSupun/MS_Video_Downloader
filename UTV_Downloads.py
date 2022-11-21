@@ -89,7 +89,7 @@ class Thread_DownloadUV(QtCore.QThread):
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
                 self.Notifications()
                 
-
+    # Selecting Subtitle.................................................
     def SelectSubtitles(self):
         Lang_Text = self.MainCode.comboBox_Quality_Sub_YV.currentText()
         print(Lang_Text)
@@ -107,12 +107,13 @@ class Thread_DownloadUV(QtCore.QThread):
             self.Requested_Sub_lang = 'ta'
 
     def Format_Selection(self):
+           
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
             self.VideoFormat = 'bestaudio/best'
         else:
-            if self.Format_Requested == 0:
+            if self.Format_Requested == 0:  # Best video
                 self.VideoFormat = 'bestvideo*+bestaudio/best'
-            if self.Format_Requested == 1:
+            if self.Format_Requested == 1:  #
                 self.VideoFormat = 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
             if self.Format_Requested == 2:
                 self.VideoFormat = 'bestvideo[height<=720]+bestaudio/best[height<=720]'
