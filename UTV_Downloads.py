@@ -113,17 +113,17 @@ class Thread_DownloadUV(QtCore.QThread):
         else:
             if self.Format_Requested == 0:  # Best video
                 self.VideoFormat = 'bestvideo*+bestaudio/best'
-            if self.Format_Requested == 1:  #
+            if self.Format_Requested == 1:  # 1080p
                 self.VideoFormat = 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
-            if self.Format_Requested == 2:
+            if self.Format_Requested == 2:  # 720p
                 self.VideoFormat = 'bestvideo[height<=720]+bestaudio/best[height<=720]'
-            if self.Format_Requested == 3:
+            if self.Format_Requested == 3:  # 480p
                 self.VideoFormat = 'bestvideo[height<=480]+bestaudio/best[height<=480]'
-            if self.Format_Requested == 4:
+            if self.Format_Requested == 4:  # 360p
                 self.VideoFormat = 'bestvideo[height<=360]+bestaudio/best[height<=360]'
-            if self.Format_Requested == 5:
+            if self.Format_Requested == 5:  # 240p
                 self.VideoFormat = 'bestvideo[height<=240]+bestaudio/best[height<=240]'
-            if self.Format_Requested == 6:
+            if self.Format_Requested == 6:  # 144p
                 self.VideoFormat = 'bestvideo[height<=144]+bestaudio/best[height<=144]'
 
     def Downloader(self):
