@@ -61,6 +61,6 @@ class Thread_ChecksUP(QThread):
         # Thumbnail list ............................
         self.thumbnails = []
         
-      
+        # Setting status of the application .........
         self.Video_checked = 0
 
