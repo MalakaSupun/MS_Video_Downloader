@@ -37,3 +37,30 @@ Not_In_Direct_Sub = []
 # Not available auto subs ................
 Not_In_Auto_Sub = []
 
+class Thread_ChecksUP(QThread):
+    # Signal for playlist ..................
+    Playlist_details = QtCore.pyqtSignal(int)
+
+    def __init__(self, parent):
+        QThread.__init__(self, parent)
+        self.MainCode = parent
+
+        
+        self.Thumbnail_To_Download = ''
+        self.Formats = ''
+        self.The_link = ''
+        self.channelName = ''
+        self.YTP_VideoCount = ''
+        self.YTP_ViewCount = ''
+        self.YTP_title = ''
+        self.isPlayList = ''
+        self.Audio_Size = ''
+        self.Audio_Format = ''
+        self.Uploaded_Date = ''
+        
+       
+        self.thumbnails = []
+        
+        
+        self.Video_checked = 0
+
