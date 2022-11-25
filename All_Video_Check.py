@@ -45,7 +45,7 @@ class Thread_ChecksUP(QThread):
         QThread.__init__(self, parent)
         self.MainCode = parent
 
-        
+        # Main video parameters ....................
         self.Thumbnail_To_Download = ''
         self.Formats = ''
         self.The_link = ''
@@ -58,9 +58,9 @@ class Thread_ChecksUP(QThread):
         self.Audio_Format = ''
         self.Uploaded_Date = ''
         
-       
+        # Thumbnail list ............................
         self.thumbnails = []
         
-        
+      
         self.Video_checked = 0
 
