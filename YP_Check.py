@@ -145,6 +145,7 @@ class Thread_ChecksUP(QThread):
                     print(f"Error.......{key}...................")
                 except:
                     print(f"Error..........................")
+            // IF THE LINK IS NOT FROM A PLAYLIST ..........        
             else:
                 print("Link is not of the Play List .........")
                 self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))
