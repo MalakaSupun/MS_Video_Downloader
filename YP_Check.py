@@ -86,8 +86,7 @@ class Thread_ChecksUP(QThread):
             self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))
 
     def get_Video_info(self):
-        # ,'quiet': True
-
+       
         ydl_opts = {'format': self.Formats, 'no_warnings': True, 'ignoreerrors': True}
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(self.The_link, download=False)
@@ -97,7 +96,7 @@ class Thread_ChecksUP(QThread):
             self.isPlayList = B["_type"]
             print(f"Your link is representing a : {self.isPlayList}")
 
-            
+            // Need to be a playlist to execute this code ........
             if self.isPlayList == "playlist":
                 try:
                     self.YTP_title = B["title"]
