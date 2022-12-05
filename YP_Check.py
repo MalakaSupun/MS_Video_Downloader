@@ -65,8 +65,11 @@ class Thread_ChecksUP(QThread):
         self.MainCode.progressBar_YT_V.setValue(0)
         self.MainCode.label_Pcomplete_YT_P.setText("................... Playlist Checking ...................")
         print("................... Playlist Checking ...................")
-        self.The_link = self.MainCode.lineEdit_YTP_link.text()
+        
+        // Getting link from the UI ........
+        self.The_link = self.MainCode.lineEdit_YTP_link.text()          
 
+        // If the empty ........
         if self.The_link != '':
             print(f"Playlist URL : {self.The_link}")
 
