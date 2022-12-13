@@ -66,8 +66,8 @@ class Thread_DownloadUV(QtCore.QThread):
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
             if self.Video_folder != '':
                 # print("Audio Only")
-                self.Format_Selection()
-                self.Downloader()
+                self.Format_Selection()   // Selecting formats to downloading ......
+                self.Downloader()         // Execute Downloading function ..........
                 self.MainCode.label_Pcomplete_UTV.setText("................... Format Downloaded ...................")
                 self.MainCode.progressBar_YT_V.setValue(0)
             else:
@@ -87,7 +87,7 @@ class Thread_DownloadUV(QtCore.QThread):
 
             else:
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
-                self.Notifications()
+                self.Notifications()  // get notified when downloading is finished......
                 
     # Selecting Subtitle.................................................
     def SelectSubtitles(self):
