@@ -77,8 +77,8 @@ class Thread_DownloadUV(QtCore.QThread):
             if self.Video_folder != '':
                 self.Format_Requested = self.MainCode.comboBox_Quality_YV.currentIndex()
                 print(f'Requested Format :{self.Format_Requested}')
-                self.Format_Selection()
-                self.Downloader()
+                self.Format_Selection()   // Selecting formats to downloading ......
+                self.Downloader()         // Execute Downloading function ..........
                 self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")
                 self.MainCode.progressBar_YT_V.setValue(0)
                 self.VideoDownloaded = 1
