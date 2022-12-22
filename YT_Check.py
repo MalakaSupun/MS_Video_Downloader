@@ -3,7 +3,8 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap
 # Downloading module ..................
-import yt_dlp
+import yt_dlp                                    # this is the most important module for app
+
 # Json for information gathering.......
 import json
 # For Thumbnail downloading ...........
