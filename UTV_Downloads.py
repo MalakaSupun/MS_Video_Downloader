@@ -45,16 +45,17 @@ class Thread_DownloadUV(QtCore.QThread):
         self.Format_Requested = None
         self.Video_folder = None
         self.The_link = None
+           
         self.Requested_Sub_lang = ''
         self.is_running = True
-        self.VideoDownloaded = 0
+        self.VideoDownloaded = 0   
 
     def run(self):
         self.VideoDownloaded = 0
-        link = self.MainCode.lineEdit_YTV_link.text()
+        link = self.MainCode.lineEdit_YTV_link.text()    # Link of the video.....
         self.Link = link
         if link != '':
-            self.The_link = link.replace('&', '"&"')
+            self.The_link = link.replace('&', '"&"')      # Replace link with & marks
             # print(self.The_link)
             self.MainCode.label_Pcomplete_UTV.setText("................... Downloading Started ...................")
         else:
