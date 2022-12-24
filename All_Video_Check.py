@@ -59,7 +59,7 @@ class Thread_ChecksUP(QThread):
         self.Uploaded_Date = ''
         
         # Thumbnail list ............................
-        self.thumbnails = []
+        self.thumbnails = []   # this is for store thumbnail linkz
         
         # Setting status of the application .........
         self.Video_checked = 0
