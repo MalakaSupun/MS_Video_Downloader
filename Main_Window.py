@@ -138,8 +138,7 @@ class MainWindow(QMainWindow):
         self.label_Pcomplete_FB.setText(" Add a FaceBook video URL to Download............... ")
         self.label_Vcomplete_UD.setText(" Add a Udemy course URL to Download...............")
         self.label_Vcomplete_OV.setText(" Add a video URL to Download....................")
-        # self.label_Pcomplete_1.setText(" ")
-        # self.label_Pcomplete_1.setText(" ")
+        
 
     # Browse all the dialogs for file saving place ........
     def Browse_YTV(self):
@@ -182,7 +181,7 @@ class MainWindow(QMainWindow):
     def Set_Thumbs_forTerminates(self):
         pic = 'Icons\Tumbs\LightingMQ.png'
         pix = QPixmap(pic)
-        # print(f"Page : {self.tabWidget.currentIndex()}")
+       
         if self.tabWidget.currentIndex() == 0:
             self.Youtube_Vthumbnail.setPixmap(pix)
         elif self.tabWidget.currentIndex() == 1:
