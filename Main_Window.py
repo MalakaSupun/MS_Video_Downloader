@@ -403,9 +403,9 @@ class MainWindow(QMainWindow):
         self.thread[3].start()
         PlayListURL = self.lineEdit_YTP_link.text()
         if PlayListURL != '':
-            Loading_GIf = QMovie("GIFs/Magnify_no_Background.gif")  // Loading Gif
-            self.Youtube_Pthumbnail.setMovie(Loading_GIf)           // set off Gif
-            Loading_GIf.start()                                     // start gif..................
+            Loading_GIf = QMovie("GIFs/Magnify_no_Background.gif")  # Loading Gif
+            self.Youtube_Pthumbnail.setMovie(Loading_GIf)           # set off Gif
+            Loading_GIf.start()                                     # start gif..................
               
 
 def main():
