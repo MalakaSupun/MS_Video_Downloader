@@ -56,8 +56,8 @@ def run(self):
             if self.Video_folder != '':
                 self.Format_Requested = self.MainCode.comboBox_Quality_YV.currentIndex()
                 print(f'Requested Format :{self.Format_Requested}')
-                self.Format_Selection()   # Selecting formats to downloading ......
-                self.Downloader()         # Execute Downloading function ..........
+                self.Format_Selection() 
+                self.Downloader()         
                 self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")
                 self.MainCode.progressBar_YT_V.setValue(0)
                 self.VideoDownloaded = 1
@@ -66,7 +66,7 @@ def run(self):
 
             else:
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
-                self.Notifications()  # get notified when downloading is finished......
+                self.Notifications() 
                 
 
 
