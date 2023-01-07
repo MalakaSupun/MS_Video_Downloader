@@ -28,7 +28,46 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
 
 
 
+def run(self):
+        self.VideoDownloaded = 0
+        link = self.MainCode.lineEdit_YTV_link.text()    # Link of the video.....
+        self.Link = link
+        if link != '':
+            self.The_link = link.replace('&', '"&"')      # Replace link with & marks
+            # print(self.The_link)
+            self.MainCode.label_Pcomplete_UTV.setText("................... Downloading Started ...................")
+        else:
+            print("Enter a Link to download..........")
 
+        self.Video_folder = self.MainCode.lineEdit_YTV_F.text()
+        # print(f'Downloading Location : "{self.Video_folder}"')
+
+        if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
+            if self.Video_folder != '':
+                # print("Audio Only")
+                self.Format_Selection()   # Selecting formats to downloading ......
+                self.Downloader()         # Execute Downloading function ..........
+                self.MainCode.label_Pcomplete_UTV.setText("................... Format Downloaded ...................")
+                self.MainCode.progressBar_YT_V.setValue(0)
+            else:
+                self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download  .............")
+
+        else:
+            if self.Video_folder != '':
+                self.Format_Requested = self.MainCode.comboBox_Quality_YV.currentIndex()
+                print(f'Requested Format :{self.Format_Requested}')
+                self.Format_Selection()   # Selecting formats to downloading ......
+                self.Downloader()         # Execute Downloading function ..........
+                self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")
+                self.MainCode.progressBar_YT_V.setValue(0)
+                self.VideoDownloaded = 1
+                self.Notifications()
+
+
+            else:
+                self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
+                self.Notifications()  # get notified when downloading is finished......
+                
 
 
 
