@@ -41,4 +41,29 @@ Not_In_Direct_Sub = []
 # Not Available auto languages available for video.....
 Not_In_Auto_Sub = []
 
+   def run(self):
+        self.MainCode.progressBar_YT_V.setValue(0)
+        self.MainCode.label_Pcomplete_YT_P.setText("................... Playlist Checking ...................")
+        print("................... Playlist Checking ...................")
+        
+        // Getting link from the UI ........
+        self.The_link = self.MainCode.lineEdit_YTP_link.text()          
 
+        // If the empty ........
+        if self.The_link != '':
+            print(f"Playlist URL : {self.The_link}")
+
+            if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
+                self.Formats = 'bestaudio/best'
+            else:
+                self.Formats = 'bestvideo*+bestaudio/best'
+
+            self.get_Video_info()
+            # Setting status of the application .........
+            self.Video_checked = 1
+
+        else:
+            print("Add Link to Download / Check")
+            self.MainCode.label_Pcomplete_YT_P.setText(
+                "................... Add Link to Download / Check ...................")
+            self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))
