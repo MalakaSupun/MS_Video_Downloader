@@ -64,3 +64,69 @@ class Thread_ChecksUP(QThread):
         # Setting status of the application .........
         self.Video_checked = 0
 
+def get_Video_info(self):
+       
+        ydl_opts = {'format': self.Formats, 'no_warnings': True, 'ignoreerrors': True}
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(self.The_link, download=False)
+            A = json.dumps(ydl.sanitize_info(info), indent=2)
+            B = json.loads(A)
+
+            self.isPlayList = B["_type"]
+            print(f"Your link is representing a : {self.isPlayList}")
+
+            // Need to be a playlist to execute this code ........
+            if self.isPlayList == "playlist":
+                try:
+                    self.YTP_title = B["title"]
+                    self.YTP_VideoCount = B["playlist_count"]
+                    self.YTP_ViewCount = B["view_count"]
+                    Date = B["modified_date"]
+                    self.Uploaded_Date = f'{Date[0]}{Date[1]}{Date[2]}{Date[3]}/{Date[4]}{Date[5]}/{Date[6]}{Date[7]}'
+                    self.channelName = B["channel"]
+
+                    self.MainCode.label_Title_YTP.setText(f'{self.YTP_title}')
+                    self.MainCode.label_videoCount_YTP.setText(f'{self.YTP_VideoCount}')
+                    self.MainCode.label_Channel_YTP.setText(f'{self.channelName}')
+                    self.MainCode.label_PlayListViews_YTP.setText(f'{self.YTP_ViewCount:,}')
+                    self.MainCode.label_Date_YTP.setText(f'{self.Uploaded_Date}')
+                    
+                    # Set list for thumbnail urls ...................................................................
+                    for thumbs in B["thumbnails"]:
+                        self.thumbnails.append(thumbs["url"])
+                    # selecting right one out of all thumbnails ....................................................    
+                    self.Thumbnail_To_Download = self.thumbnails[-1]
+                    
+                    # downloading video thumbnails .................
+                    try:
+                        response = requests.get(self.Thumbnail_To_Download)
+                        with open("Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg", "wb") as thumbnail:
+                            thumbnail.write(response.content)
+
+                        self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap('Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg'))
+                    # usef yt-dlp if 'request' not worked ...........
+                    except:
+                        Video_folder = r'Thumbnail\Youtube_PlayList'
+                        ydl_opts = {'writethumbnail': True,
+                                    'outtmpl': {'default': f'{Video_folder}/YoutubePlayListThumb.%(ext)s'},
+                                    'skip_download': True, 'ignoreerrors': True, 'no_warnings': True
+                                    }
+
+                        with yt_dlp.YoutubeDL(ydl_opts) as ydl_YP:
+                            ydl_YP.download(self.Thumbnail_To_Download)
+                        try:
+                            self.MainCode.Youtube_Pthumbnail.setPixmap(
+                                QPixmap(r'Thumbnail\Youtube_Video\YoutubeVideoThumb'))
+                        except:
+                            self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\minis.png'))
+
+                except KeyError as key:
+                    print(f"Error.......{key}...................")
+                except:
+                    print(f"Error..........................")
+            // IF THE LINK IS NOT FROM A PLAYLIST ..........        
+            else:
+                print("Link is not of the Play List .........")
+                self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))
+                self.MainCode.label_Pcomplete_YT_P.setText(
+                    ".............. Added link is not valid .... Add valid Link to search ...................")
