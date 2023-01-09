@@ -75,7 +75,7 @@ def get_Video_info(self):
             self.isPlayList = B["_type"]
             print(f"Your link is representing a : {self.isPlayList}")
 
-            // Need to be a playlist to execute this code ........
+            # Need to be a playlist to execute this code ........
             if self.isPlayList == "playlist":
                 try:
                     self.YTP_title = B["title"]
