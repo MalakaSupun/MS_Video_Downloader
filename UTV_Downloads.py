@@ -1,4 +1,4 @@
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtCore import QThread, pyqtSignal # Threading and signals.....
 from PyQt5.QtGui import QPixmap
 import yt_dlp
 import json
@@ -6,7 +6,9 @@ import requests
 import time
 import concurrent.futures
 import winsound
+
 from YT_Check import *
+# plyer module for notifications
 from plyer import notification
 
 Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
