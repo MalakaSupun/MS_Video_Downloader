@@ -235,6 +235,7 @@ class Thread_DownloadUV(QtCore.QThread):
             self.Downloaded_So_Far.emit(Data_Downloaded)
 
         if d['status'] == "Error":
+           
             print("\n..........Error..........Error..........Error..........\n")
             winsound.PlaySound("Sounds/Error.mp3", winsound.SND_FILENAME)
 
@@ -263,6 +264,8 @@ class Thread_DownloadUV(QtCore.QThread):
                 self.MainCode.label_Views_Selected_YTV_Size.setText(
                     f'Size of video selected : {Thread_ChecksUV.V144p_Size}  MB')
 
+           
+    #  Set up notifications for downloader...........      
     def Notifications(self):
         if self.VideoDownloaded == 1:
 
@@ -278,7 +281,7 @@ class Thread_DownloadUV(QtCore.QThread):
         elif self.VideoDownloaded == 0:
             if self.Video_folder or self.Link == '':
                 notification.notify(
-                    title="YouTube Video Download",
+                    title="YouTube Not Video Download",
                     message=" Add Location and Link to Download Video !!! ",
                     app_icon="E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Icons\Tumbs\Main_icon.ico",
                     app_name="Ms Video Download",
