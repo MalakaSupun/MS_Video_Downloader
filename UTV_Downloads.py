@@ -18,6 +18,8 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
 
 
 class Thread_DownloadUV(QtCore.QThread):
+           
+    # Signals for Ui updates.....       
     ProgressCount = QtCore.pyqtSignal(int)
     DownloadSpeed = QtCore.pyqtSignal(str)
     TimeRemains = QtCore.pyqtSignal(str)
