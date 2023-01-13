@@ -12,9 +12,9 @@ import requests
 import time
 # For python normal theadings.....
 import concurrent.futures
-
+# For notificaton sounds......
 import winsound
-
+# Importing video checking class...
 from YT_Check import *
 # plyer module for notifications
 from plyer import notification
