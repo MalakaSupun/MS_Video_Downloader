@@ -29,16 +29,17 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
 class Thread_DownloadUV(QtCore.QThread):
            
     # Signals for Ui updates.....       
-    ProgressCount = QtCore.pyqtSignal(int)
-    DownloadSpeed = QtCore.pyqtSignal(str)
-    TimeRemains = QtCore.pyqtSignal(str)
-    Downloaded_So_Far = QtCore.pyqtSignal(str)
+    ProgressCount = QtCore.pyqtSignal(int)      #
+    DownloadSpeed = QtCore.pyqtSignal(str)      #
+    TimeRemains = QtCore.pyqtSignal(str)        # 
+    Downloaded_So_Far = QtCore.pyqtSignal(str)  #
 
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
         self.YTV_Checks = Thread_ChecksUV(self)
 
+        #
         self.Link = None
         self.VideoFormat = None
         self.Format_Requested = None
@@ -60,7 +61,6 @@ class Thread_DownloadUV(QtCore.QThread):
             print("Enter a Link to download..........")
 
         self.Video_folder = self.MainCode.lineEdit_YTV_F.text()
-        # print(f'Downloading Location : "{self.Video_folder}"')
 
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
             if self.Video_folder != '':
