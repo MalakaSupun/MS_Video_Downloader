@@ -19,6 +19,7 @@ from YT_Check import *
 # plyer module for notifications
 from plyer import notification
 
+#All Downloading formats.............
 Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',
            'bestvideo[height<=1080]+bestaudio/best[height<=1080]', 'bestvideo[height<=720]+bestaudio/best[height<=720]',
            'bestvideo[height<=480]+bestaudio/best[height<=480]', 'bestvideo[height<=360]+bestaudio/best[height<=360]',
