@@ -39,7 +39,7 @@ class Thread_DownloadUV(QtCore.QThread):
         self.MainCode = parent
         self.YTV_Checks = Thread_ChecksUV(self)
 
-        #
+        # Variables for app ...................
         self.Link = None
         self.VideoFormat = None
         self.Format_Requested = None
@@ -64,7 +64,7 @@ class Thread_DownloadUV(QtCore.QThread):
 
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
             if self.Video_folder != '':
-                # print("Audio Only")
+                
                 self.Format_Selection()
                 self.Downloader()
                 self.MainCode.label_Pcomplete_UTV.setText("................... Format Downloaded ...................")
