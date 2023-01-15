@@ -87,15 +87,7 @@ class Thread_DownloadUV(QtCore.QThread):
             else:
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
                 self.Notifications()
-                """while True:
-                    cnt += 1
-                    if cnt < 100:
-                        time.sleep(0.01)
-                        self.ProgressCount.emit(cnt)
-                        print(cnt)
-                    elif cnt == 100:
-                        self.ProgressCount.emit(cnt)
-                        cnt = 0"""
+              
 
     def SelectSubtitles(self):
         Lang_Text = self.MainCode.comboBox_Quality_Sub_YV.currentText()
@@ -145,7 +137,7 @@ class Thread_DownloadUV(QtCore.QThread):
 
                 ydl_opts = {
                     'noplaylist': True,
-                    #'quiet': True,
+                   
                     'format_sort': {'ext': True},
                     'ignoreerrors': True,  'no_warnings': True,
                     'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
