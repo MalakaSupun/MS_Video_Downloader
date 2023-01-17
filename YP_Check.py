@@ -99,7 +99,7 @@ class Thread_ChecksUP(QThread):
             self.isPlayList = B["_type"]
             print(f"Your link is representing a : {self.isPlayList}")
 
-            // Need to be a playlist to execute this code ........
+            # Need to be a playlist to execute this code ........
             if self.isPlayList == "playlist":
                 try:
                     self.YTP_title = B["title"]
@@ -148,7 +148,7 @@ class Thread_ChecksUP(QThread):
                     print(f"Error.......{key}...................")
                 except:
                     print(f"Error..........................")
-            // IF THE LINK IS NOT FROM A PLAYLIST ..........        
+            # IF THE LINK IS NOT FROM A PLAYLIST ..........        
             else:
                 print("Link is not of the Play List .........")
                 self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))
