@@ -41,9 +41,9 @@ class Thread_DownloadUV(QtCore.QThread):
 
         # Variables for app ...................
         self.Link = ''
-        self.VideoFormat = None
+        self.VideoFormat = ''
         self.Format_Requested = ''
-        self.Video_folder = None
+        self.Video_folder = ''
         self.The_link = ''
         self.Requested_Sub_lang = ''
         self.is_running = True
