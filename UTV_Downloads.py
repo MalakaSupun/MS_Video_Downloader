@@ -42,7 +42,7 @@ class Thread_DownloadUV(QtCore.QThread):
         # Variables for app ...................
         self.Link = ''
         self.VideoFormat = None
-        self.Format_Requested = None
+        self.Format_Requested = ''
         self.Video_folder = None
         self.The_link = ''
         self.Requested_Sub_lang = ''
@@ -53,6 +53,7 @@ class Thread_DownloadUV(QtCore.QThread):
         self.VideoDownloaded = 0
         link = self.MainCode.lineEdit_YTV_link.text()
         self.Link = link
+
         if link != '':
             self.The_link = link.replace('&', '"&"')
             # print(self.The_link)
@@ -91,7 +92,6 @@ class Thread_DownloadUV(QtCore.QThread):
 
     def SelectSubtitles(self):
         Lang_Text = self.MainCode.comboBox_Quality_Sub_YV.currentText()
-        print(Lang_Text)
         if Lang_Text == "Tamil":
             self.Requested_Sub_lang = 'ta'
         elif Lang_Text == "Sinhala":
