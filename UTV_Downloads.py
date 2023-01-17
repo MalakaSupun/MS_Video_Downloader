@@ -37,6 +37,7 @@ class Thread_DownloadUV(QtCore.QThread):
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
+        # method for class. ............
         self.YTV_Checks = Thread_ChecksUV(self)
 
         # Variables for app ...................
