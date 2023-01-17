@@ -47,7 +47,7 @@ class Thread_DownloadUV(QtCore.QThread):
         self.The_link = ''
         self.Requested_Sub_lang = ''
         self.is_running = True
-        self.VideoDownloaded = 0
+        #self.VideoDownloaded = 0
 
     def run(self):
         self.VideoDownloaded = 0
@@ -154,7 +154,7 @@ class Thread_DownloadUV(QtCore.QThread):
 
                 ydl_opts = {
                     'noplaylist': True,
-                    #'quiet': True,
+                    
                     'ignoreerrors': True,  'no_warnings': True,
                     'format_sort': {'ext': True},
                     'format': 'bestaudio/best',
