@@ -82,11 +82,11 @@ class Thread_DownloadUV(QtCore.QThread):
                 self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")
                 self.MainCode.progressBar_YT_V.setValue(0)
                 self.VideoDownloaded = 1
-                self.Notifications()
+                self.Notifications()          # Make a notification.......   
 
             else:
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
-                self.Notifications()             
+                self.Notifications()          # Make a notification.......   
 
     def SelectSubtitles(self):
         Lang_Text = self.MainCode.comboBox_Quality_Sub_YV.currentText()
