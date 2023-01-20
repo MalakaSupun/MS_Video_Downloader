@@ -84,11 +84,9 @@ class Thread_DownloadUV(QtCore.QThread):
                 self.VideoDownloaded = 1
                 self.Notifications()
 
-
             else:
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
-                self.Notifications()
-              
+                self.Notifications()             
 
     def SelectSubtitles(self):
         Lang_Text = self.MainCode.comboBox_Quality_Sub_YV.currentText()
@@ -136,8 +134,7 @@ class Thread_DownloadUV(QtCore.QThread):
             if self.VideoFormat != 'bestaudio/best': # best video download .....
 
                 ydl_opts = {
-                    'noplaylist': True,
-                   
+                    'noplaylist': True,  
                     'format_sort': {'ext': True},
                     'ignoreerrors': True,  'no_warnings': True,
                     'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
@@ -154,7 +151,6 @@ class Thread_DownloadUV(QtCore.QThread):
 
                 ydl_opts = {
                     'noplaylist': True,
-                    
                     'ignoreerrors': True,  'no_warnings': True,
                     'format_sort': {'ext': True},
                     'format': 'bestaudio/best',
@@ -223,7 +219,7 @@ class Thread_DownloadUV(QtCore.QThread):
         elif d['status'] == "downloading":
 
             Speed = d['_speed_str']
-            self.DownloadSpeed.emit(Speed)
+            self.DownloadSpeed.emit(Speed)                   # Send through signal......
 
             per_ct = d['_percent_str']
             split = per_ct.split('%')
@@ -231,13 +227,13 @@ class Thread_DownloadUV(QtCore.QThread):
             percentage = float(pct)
 
             cnt = round(percentage)
-            self.ProgressCount.emit(cnt)
+            self.ProgressCount.emit(cnt)                     # Send through signal......
 
             TimeRemaining = d['_eta_str']
             self.TimeRemains.emit(TimeRemaining)
 
             Data_Downloaded = d['_downloaded_bytes_str']
-            self.Downloaded_So_Far.emit(Data_Downloaded)
+            self.Downloaded_So_Far.emit(Data_Downloaded)     # Send through signal......
 
         if d['status'] == "Error":
            
@@ -273,8 +269,7 @@ class Thread_DownloadUV(QtCore.QThread):
     #  Set up notifications for downloader...........      
     def Notifications(self):
         if self.VideoDownloaded == 1:
-
-            notification.notify(
+                notification.notify(
                 title="YouTube Video Download",
                 message=" Video Downloaded !!! ",
                 app_icon="E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Icons\Tumbs\Main_icon.ico",
@@ -285,7 +280,7 @@ class Thread_DownloadUV(QtCore.QThread):
             )
         elif self.VideoDownloaded == 0:
             if self.Video_folder or self.Link == '':
-                notification.notify(
+                    notification.notify(
                     title="YouTube Not Video Download",
                     message=" Add Location and Link to Download Video !!! ",
                     app_icon="E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Icons\Tumbs\Main_icon.ico",
