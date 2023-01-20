@@ -51,7 +51,7 @@ class Thread_DownloadUV(QtCore.QThread):
 
     def run(self):
         self.VideoDownloaded = 0
-        link = self.MainCode.lineEdit_YTV_link.text()
+        link = self.MainCode.lineEdit_YTV_link.text()    # Video Link .................................
         self.Link = link
 
         if link != '':
