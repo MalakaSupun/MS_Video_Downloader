@@ -36,6 +36,7 @@ class Thread_DownloadUV(QtCore.QThread):
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
+           
         # method for class. ............
         self.YTV_Checks = Thread_ChecksUV(self)
 
@@ -47,7 +48,6 @@ class Thread_DownloadUV(QtCore.QThread):
         self.The_link = ''
         self.Requested_Sub_lang = ''
         self.is_running = True
-        #self.VideoDownloaded = 0
 
     def run(self):
         self.VideoDownloaded = 0
