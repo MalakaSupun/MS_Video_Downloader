@@ -47,7 +47,7 @@ class Thread_ChecksUV(QThread):
         self.V1080p_Size = " "
         self.Direct_Sub_Avalability = " "
         self.Video_Duration = " "
-        self.YTV_ViewCount = 000000
+        self.YTV_ViewCount = 0000
         self.Uploded_Date = " "
         self.Yt_Channle = " "
         self.Auto_Sub_Avalability = " "
@@ -71,8 +71,8 @@ class Thread_ChecksUV(QThread):
         self.MainCode.label_Pcomplete_UTV.setText("................... Video Checking ...................")
         print("................... Video Checking ...................")
 
-        S_Time = time.perf_counter()
-        self.Set_Default_Labels()
+        S_Time = time.perf_counter()         # Starting time...........
+        self.Set_Default_Labels()            # Update all labels........
 
         self.F_Requested = self.MainCode.comboBox_Quality_YV.currentIndex()
         link = self.MainCode.lineEdit_YTV_link.text()
