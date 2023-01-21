@@ -56,7 +56,6 @@ class Thread_DownloadUV(QtCore.QThread):
 
         if link != '':
             self.The_link = link.replace('&', '"&"')
-            # print(self.The_link)
             self.MainCode.label_Pcomplete_UTV.setText("................... Downloading Started ...................")
         else:
             print("Enter a Link to download..........")
