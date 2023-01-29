@@ -268,8 +268,8 @@ class Thread_DownloadUV(QtCore.QThread):
     #  Set up notifications for downloader...........      
     def Notifications(self):
         if self.VideoDownloaded == 1:
-                notification.notify(
-                title="YouTube Video Download",
+                notification.notify(            
+                title="YouTube Video Download",                                                           # Title of the notification.......
                 message=" Video Downloaded !!! ",
                 app_icon="E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Icons\Tumbs\Main_icon.ico",
                 timeout=10,
@@ -280,7 +280,7 @@ class Thread_DownloadUV(QtCore.QThread):
         elif self.VideoDownloaded == 0:
             if self.Video_folder or self.Link == '':
                     notification.notify(
-                    title="YouTube Not Video Download",
+                    title="YouTube Not Video Download",                                                       # Title of the notification.......                                                                                     
                     message=" Add Location and Link to Download Video !!! ",
                     app_icon="E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Icons\Tumbs\Main_icon.ico",
                     app_name="Ms Video Download",
