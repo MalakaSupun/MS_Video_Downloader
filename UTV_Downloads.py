@@ -67,10 +67,10 @@ class Thread_DownloadUV(QtCore.QThread):
                 
                 self.Format_Selection()
                 self.Downloader()
-                self.MainCode.label_Pcomplete_UTV.setText("................... Format Downloaded ...................")
+                self.MainCode.label_Pcomplete_UTV.setText("................... Format Downloaded ...................")   # Showing massage in statuses bar.....
                 self.MainCode.progressBar_YT_V.setValue(0)
             else:
-                self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download  .............")
+                self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download  .............")   # Showing massage in statuses bar.....
 
         else:
             if self.Video_folder != '':
@@ -78,13 +78,13 @@ class Thread_DownloadUV(QtCore.QThread):
                 print(f'Requested Format :{self.Format_Requested}')
                 self.Format_Selection()
                 self.Downloader()
-                self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")
+                self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")   # Showing massage in statuses bar.....
                 self.MainCode.progressBar_YT_V.setValue(0)
                 self.VideoDownloaded = 1
                 self.Notifications()          # Make a notification.......   
 
             else:
-                self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
+                self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")  # Showing massage in statuses bar.....
                 self.Notifications()          # Make a notification.......   
 
     def SelectSubtitles(self):
