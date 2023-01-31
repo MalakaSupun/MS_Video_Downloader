@@ -225,7 +225,7 @@ class Thread_DownloadUV(QtCore.QThread):
             pct = split[0]
             percentage = float(pct)
 
-            cnt = round(percentage)
+            cnt = round(percentage)                          # percentage amount of downloading .....
             self.ProgressCount.emit(cnt)                     # Send through signal......
 
             TimeRemaining = d['_eta_str']
