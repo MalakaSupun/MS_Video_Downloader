@@ -156,8 +156,7 @@ These are the websites that can be used to download videos or Playlist.
 There are some other websites as well . Youcan find them in YT-dlp gitHub page.
 
 #
-##
-When you use browser name insted of user name and password, Yt-dlp will going to use youer browser
+##When you use browser name insted of user name and password, Yt-dlp will going to use youer browser
 cookies for the proces of downloading video. 
 
 
