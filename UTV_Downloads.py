@@ -137,8 +137,8 @@ class Thread_DownloadUV(QtCore.QThread):
                     'format_sort': {'ext': True},
                     'ignoreerrors': True,  'no_warnings': True,
                     'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
-                    'writesubtitles': True,                                                        # Enable subs to downloading......2
-                    'writeautomaticsub': True, 'subtitleslangs': {self.Requested_Sub_lang},
+                    'writesubtitles': True,                                                        # Enable subs to downloading......
+                    'writeautomaticsub': True, 'subtitleslangs': {self.Requested_Sub_lang},        # Languages and auto-generations.....
                     'format': self.VideoFormat, 'ext': 'mp4',
                     'progress_hooks': [self.My_Progress_hook],
                 }
