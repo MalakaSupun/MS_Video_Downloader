@@ -95,11 +95,11 @@ class Thread_DownloadUV(QtCore.QThread):
             self.Requested_Sub_lang = 'si'
         elif Lang_Text == "English":
             self.Requested_Sub_lang = 'en'
-        elif Lang_Text == "English-Auto-Gen":
+        elif Lang_Text == "English-Auto-Gen":                 # English auto generated subs......
             self.Requested_Sub_lang = 'en'
-        elif Lang_Text == "Sinhala-Auto-Gen":
+        elif Lang_Text == "Sinhala-Auto-Gen":                 # Sinhala auto generated subs......
             self.Requested_Sub_lang = 'si'
-        elif Lang_Text == "Tamil-Auto-Gen":
+        elif Lang_Text == "Tamil-Auto-Gen":                   # Tamil auto generated subs......
             self.Requested_Sub_lang = 'ta'
 
     def Format_Selection(self):
