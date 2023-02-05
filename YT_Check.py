@@ -106,11 +106,11 @@ class Thread_ChecksUV(QThread):
                 "................... Add Link to Download / Check ...................")
 
     def Sub_langs(self, item):
-        if item == 'en':
+        if item == 'en':                 # Englis subs......
             return 'en'
-        elif item == 'si':
+        elif item == 'si':               # Sinhala subs ....
             return 'en'
-        elif item == 'ta':
+        elif item == 'ta':               # Tamil subs.......
             return 'en'
 
     def get_Video_info(self, VideoFormat):
