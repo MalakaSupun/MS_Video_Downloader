@@ -89,12 +89,12 @@ class Thread_DownloadUV(QtCore.QThread):
 
     def SelectSubtitles(self):
         Lang_Text = self.MainCode.comboBox_Quality_Sub_YV.currentText()
-        if Lang_Text == "Tamil":
-            self.Requested_Sub_lang = 'ta'
-        elif Lang_Text == "Sinhala":
-            self.Requested_Sub_lang = 'si'
-        elif Lang_Text == "English":
-            self.Requested_Sub_lang = 'en'
+        if Lang_Text == "Tamil":                              # Tamil auto generated subs......
+            self.Requested_Sub_lang = 'ta'                
+        elif Lang_Text == "Sinhala":                          # Sinhala auto generated subs......
+            self.Requested_Sub_lang = 'si'                
+        elif Lang_Text == "English":                          # English auto generated subs......
+            self.Requested_Sub_lang = 'en'                
         elif Lang_Text == "English-Auto-Gen":                 # English auto generated subs......
             self.Requested_Sub_lang = 'en'
         elif Lang_Text == "Sinhala-Auto-Gen":                 # Sinhala auto generated subs......
