@@ -130,7 +130,9 @@ class Thread_ChecksUP(QThread):
                         self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap('Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg'))
                     # usef yt-dlp if 'request' not worked ...........
                     except:
+                        # path 
                         Video_folder = r'Thumbnail\Youtube_PlayList'
+                        # Downloading the vidro thumbnail..........
                         ydl_opts = {'writethumbnail': True,
                                     'outtmpl': {'default': f'{Video_folder}/YoutubePlayListThumb.%(ext)s'},
                                     'skip_download': True, 'ignoreerrors': True, 'no_warnings': True
