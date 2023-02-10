@@ -37,7 +37,7 @@ def run(self):
             # print(self.The_link)
             self.MainCode.label_Pcomplete_UTV.setText("................... Downloading Started ...................")
         else:
-            print("Enter a Link to download..........")
+            print("Enter a Link to download..........")                 
 
         self.Video_folder = self.MainCode.lineEdit_YTV_F.text()
         # print(f'Downloading Location : "{self.Video_folder}"')
@@ -66,7 +66,8 @@ def run(self):
 
             else:
                 self.MainCode.label_Pcomplete_UTV.setText("............. Add Location to Download Video .............")
-                self.Notifications() 
+                self.Notifications()                                                                                        # Sendin out notifications...
+                      
                 
 
 
