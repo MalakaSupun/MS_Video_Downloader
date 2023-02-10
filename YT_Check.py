@@ -106,6 +106,7 @@ class Thread_ChecksUV(QThread):
             self.MainCode.label_Pcomplete_UTV.setText(
                 "................... Add Link to Download / Check ...................")
 
+    # Separate subtitle languages......        
     def Sub_langs(self, item):
         if item == 'en':                 # Englis subs......
             return 'en'
