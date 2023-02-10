@@ -54,7 +54,7 @@ Not_In_Auto_Sub = []
             print(f"Playlist URL : {self.The_link}")
 
             if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
-                self.Formats = 'bestaudio/best'
+                self.Formats = 'bestaudio/best'                                    # Downloading best video................
             else:
                 self.Formats = 'bestvideo*+bestaudio/best'
 
