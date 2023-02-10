@@ -59,9 +59,9 @@ def run(self):
                 self.Format_Selection() 
                 self.Downloader()         
                 self.MainCode.label_Pcomplete_UTV.setText("................... Video Downloaded ...................")
-                self.MainCode.progressBar_YT_V.setValue(0)
-                self.VideoDownloaded = 1
-                self.Notifications()
+                self.MainCode.progressBar_YT_V.setValue(0)                                                                 # Zeroing progress bar.......
+                self.VideoDownloaded = 1                                                                                                                             
+                self.Notifications()                                                                                       # Sendin out notifications....
 
 
             else:
