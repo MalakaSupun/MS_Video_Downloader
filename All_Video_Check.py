@@ -100,10 +100,10 @@ def get_Video_info(self):
                     # downloading video thumbnails .................
                     try:
                         response = requests.get(self.Thumbnail_To_Download)
-                        with open("Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg", "wb") as thumbnail:
+                        with open("Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg", "wb") as thumbnail:         # Path for png................
                             thumbnail.write(response.content)
 
-                        self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap('Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg'))
+                        self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap('Thumbnail\Youtube_PlayList\YTP_Thumbnail.jpg'))   # Path for png................
                     # usef yt-dlp if 'request' not worked ...........
                     except:
                         Video_folder = r'Thumbnail\Youtube_PlayList'
@@ -118,7 +118,7 @@ def get_Video_info(self):
                             self.MainCode.Youtube_Pthumbnail.setPixmap(
                                 QPixmap(r'Thumbnail\Youtube_Video\YoutubeVideoThumb'))
                         except:
-                            self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\minis.png'))
+                            self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\minis.png'))  # Path for png................
 
                 except KeyError as key:
                     print(f"Error.......{key}...................")
@@ -128,6 +128,6 @@ def get_Video_info(self):
                       
             else:
                 print("Link is not of the Play List .........")
-                self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))
+                self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))          # Path for png................
                 self.MainCode.label_Pcomplete_YT_P.setText(
                     ".............. Added link is not valid .... Add valid Link to search ...................")
