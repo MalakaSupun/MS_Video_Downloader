@@ -166,7 +166,7 @@ class Thread_DownloadUV(QtCore.QThread):
             if self.VideoFormat != 'bestaudio/best':
 
                 ydl_opts = {
-                    'skip_download': True,
+                    #'skip_download': True,
                     'noplaylist': True,
                     'format_sort': {'ext': True},
                     #'quiet': True,
@@ -185,7 +185,7 @@ class Thread_DownloadUV(QtCore.QThread):
             elif self.VideoFormat == 'bestaudio/best':
 
                 ydl_opts = {
-                    'skip_download': True,
+                    #'skip_download': True,
                     'noplaylist': True,
                     'format_sort': {'ext': True},
                     'writesubtitles': True,
