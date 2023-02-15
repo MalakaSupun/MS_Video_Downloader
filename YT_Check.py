@@ -207,6 +207,7 @@ class Thread_ChecksUV(QThread):
         except:
            
             try:
+                # Remove all previous thumbnails......
                 try:
                     os.remove(
                         r'E:\other\Python\Projects\Youtube_Downloader_Yt_dlp\Thumbnail\Youtube_Video\YoutubeVideoThumb.jpg')
