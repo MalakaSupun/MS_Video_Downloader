@@ -84,12 +84,12 @@ class Thread_ChecksUV(QThread):
                 Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best']
             else:
                 Formats = ['bestvideo*+bestaudio/best',
-                           'bestvideo[height<=1080]+bestaudio/best[height<=1080]',
-                           'bestvideo[height<=720]+bestaudio/best[height<=720]',
-                           'bestvideo[height<=480]+bestaudio/best[height<=480]',
-                           'bestvideo[height<=360]+bestaudio/best[height<=360]',
-                           'bestvideo[height<=244]+bestaudio/best[height<=244]',
-                           'bestvideo[height<=144]+bestaudio/best[height<=144]']
+                           'bestvideo[height<=1080]+bestaudio/best[height<=1080]',     # 1080p
+                           'bestvideo[height<=720]+bestaudio/best[height<=720]',       # 720p
+                           'bestvideo[height<=480]+bestaudio/best[height<=480]',       # 480p
+                           'bestvideo[height<=360]+bestaudio/best[height<=360]',       # 360p
+                           'bestvideo[height<=244]+bestaudio/best[height<=244]',       # 244p
+                           'bestvideo[height<=144]+bestaudio/best[height<=144]']       # 144p
 
             with concurrent.futures.ThreadPoolExecutor() as executor:
                 executor.map(self.get_Video_info, Formats)
