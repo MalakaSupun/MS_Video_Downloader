@@ -142,7 +142,7 @@ class Thread_ChecksUP(QThread):
                             ydl_YP.download(self.Thumbnail_To_Download)
                         try:
                             self.MainCode.Youtube_Pthumbnail.setPixmap(
-                                QPixmap(r'Thumbnail\Youtube_Video\YoutubeVideoThumb'))
+                                QPixmap(r'Thumbnail\Youtube_Video\YoutubeVideoThumb'))      
                         except:
                             self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\minis.png'))
 
@@ -153,6 +153,6 @@ class Thread_ChecksUP(QThread):
             # IF THE LINK IS NOT FROM A PLAYLIST ..........        
             else:
                 print("Link is not of the Play List .........")
-                self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))
+                self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\LightingMQ.png'))                  # Update pixmap using images.......
                 self.MainCode.label_Pcomplete_YT_P.setText(
-                    ".............. Added link is not valid .... Add valid Link to search ...................")
+                    ".............. Added link is not valid .... Add valid Link to search ...................")     # Update status bar with note .....
