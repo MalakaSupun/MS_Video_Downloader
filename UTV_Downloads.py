@@ -60,7 +60,7 @@ class Thread_DownloadUV(QtCore.QThread):
         else:
             print("Enter a Link to download..........")
 
-        self.Video_folder = self.MainCode.lineEdit_YTV_F.text()
+        self.Video_folder = self.MainCode.lineEdit_YTV_F.text()                                                           # Path to save file........
 
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
             if self.Video_folder != '':
@@ -135,8 +135,8 @@ class Thread_DownloadUV(QtCore.QThread):
                 ydl_opts = {
                     'noplaylist': True,  
                     'format_sort': {'ext': True},                                                  # Format for download.........
-                    'ignoreerrors': True,  'no_warnings': True,
-                    'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
+                    'ignoreerrors': True,  'no_warnings': True,                                    # Ignore all errors ..........
+                    'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},              # Output path and name format....
                     'writesubtitles': True,                                                        # Enable subs to downloading......
                     'writeautomaticsub': True, 'subtitleslangs': {self.Requested_Sub_lang},        # Languages and auto-generations.....
                     'format': self.VideoFormat, 'ext': 'mp4',
