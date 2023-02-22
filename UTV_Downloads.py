@@ -126,15 +126,15 @@ class Thread_DownloadUV(QtCore.QThread):
         print(self.VideoFormat)
         if self.MainCode.radioButton_UTV_subs.isChecked():
             self.SelectSubtitles()
-            print(f"Selected Sub Language : {self.Requested_Sub_lang}")
+            print(f"Selected Sub Language : {self.Requested_Sub_lang}")                            # Selected Subtitle language .........
 
         if not self.MainCode.radioButton_YTV_subM.isChecked():                                     # Downloading Audio in quality sub titles ....... 
-            print("Download sub + Audio in quality")
+            print("Download sub + Audio in quality")                                               
             if self.VideoFormat != 'bestaudio/best':                                               # best Audio in quality download .....
 
                 ydl_opts = {
                     'noplaylist': True,  
-                    'format_sort': {'ext': True},
+                    'format_sort': {'ext': True},                                                  # Format for download.........
                     'ignoreerrors': True,  'no_warnings': True,
                     'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
                     'writesubtitles': True,                                                        # Enable subs to downloading......
