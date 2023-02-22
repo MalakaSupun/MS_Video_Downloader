@@ -65,8 +65,8 @@ class Thread_DownloadUV(QtCore.QThread):
         if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
             if self.Video_folder != '':
                 
-                self.Format_Selection()
-                self.Downloader()
+                self.Format_Selection()                                                                                  #  Formats for downloading.......
+                self.Downloader()                                                                                        #  Calling downloader function.....
                 self.MainCode.label_Pcomplete_UTV.setText("................... Format Downloaded ...................")   # Showing massage in statuses bar.....
                 self.MainCode.progressBar_YT_V.setValue(0)
             else:
