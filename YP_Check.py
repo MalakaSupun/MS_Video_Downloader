@@ -110,11 +110,11 @@ class Thread_ChecksUP(QThread):
                     self.channelName = B["channel"]                                                                   # Name of the channel.........                  
 
                     # Updating all parameters in UI..........................
-                    self.MainCode.label_Title_YTP.setText(f'{self.YTP_title}')
-                    self.MainCode.label_videoCount_YTP.setText(f'{self.YTP_VideoCount}')
-                    self.MainCode.label_Channel_YTP.setText(f'{self.channelName}')
-                    self.MainCode.label_PlayListViews_YTP.setText(f'{self.YTP_ViewCount:,}')
-                    self.MainCode.label_Date_YTP.setText(f'{self.Uploaded_Date}')
+                    self.MainCode.label_Title_YTP.setText(f'{self.YTP_title}')                                        #
+                    self.MainCode.label_videoCount_YTP.setText(f'{self.YTP_VideoCount}')                              #
+                    self.MainCode.label_Channel_YTP.setText(f'{self.channelName}')                                    #
+                    self.MainCode.label_PlayListViews_YTP.setText(f'{self.YTP_ViewCount:,}')                          #
+                    self.MainCode.label_Date_YTP.setText(f'{self.Uploaded_Date}')                                     # Printing Updated date of video .....
                     
                     # Set list for thumbnail urls ...................................................................
                     for thumbs in B["thumbnails"]:
