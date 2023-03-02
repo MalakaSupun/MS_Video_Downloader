@@ -95,11 +95,11 @@ class Thread_ChecksUV(QThread):
                 executor.map(self.get_Video_info, Formats)
 
             F_Time = time.perf_counter()
-            self.Set_Lables()
-            self.set_Selected_Video_Size()
+            self.Set_Lables()                                                          # Setup labs....
+            self.set_Selected_Video_Size()                                             # Set selected video size.....
             print(f'Execution Time : {round(F_Time - S_Time, 3)} s')
             self.Video_checked = 1
-            self.ClearLists()
+            self.ClearLists()                                                          # Clear all lists.........
 
         else:
             print("Add Link to Download / Check")
