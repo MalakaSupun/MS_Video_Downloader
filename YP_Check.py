@@ -74,9 +74,9 @@ class Thread_ChecksUP(QThread):
             print(f"Playlist URL : {self.The_link}")
 
             if self.MainCode.radioButton_UTV_AudioOnly.isChecked():
-                self.Formats = 'bestaudio/best'
+                self.Formats = 'bestaudio/best'                         # Best audio track.....
             else:
-                self.Formats = 'bestvideo*+bestaudio/best'
+                self.Formats = 'bestvideo*+bestaudio/best'              # Best audio & video track.....
 
             self.get_Video_info()
             # Setting status of the application .........
