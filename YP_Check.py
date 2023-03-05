@@ -140,10 +140,10 @@ class Thread_ChecksUP(QThread):
                                     }
 
                         with yt_dlp.YoutubeDL(ydl_opts) as ydl_YP:
-                            ydl_YP.download(self.Thumbnail_To_Download)
+                            ydl_YP.download(self.Thumbnail_To_Download)                            # download thumbnail.....
                         try:
                             self.MainCode.Youtube_Pthumbnail.setPixmap(
-                                QPixmap(r'Thumbnail\Youtube_Video\YoutubeVideoThumb'))      
+                                QPixmap(r'Thumbnail\Youtube_Video\YoutubeVideoThumb'))             # Loading Thumbnail....
                         except:
                             self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\minis.png'))
 
