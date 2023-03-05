@@ -135,7 +135,7 @@ class Thread_ChecksUP(QThread):
                         Video_folder = r'Thumbnail\Youtube_PlayList'
                         # Downloading the vidro thumbnail..........
                         ydl_opts = {'writethumbnail': True,
-                                    'outtmpl': {'default': f'{Video_folder}/YoutubePlayListThumb.%(ext)s'},
+                                    'outtmpl': {'default': f'{Video_folder}/YoutubePlayListThumb.%(ext)s'},  # output folder.....
                                     'skip_download': True, 'ignoreerrors': True, 'no_warnings': True
                                     }
 
