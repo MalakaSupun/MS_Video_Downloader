@@ -36,5 +36,19 @@ class Thread_DownloadUV(QtCore.QThread):
     DownloadSpeed = QtCore.pyqtSignal(str)      # Downloading speed......
     TimeRemains = QtCore.pyqtSignal(str)        # Remaining time ........
     Downloaded_So_Far = QtCore.pyqtSignal(str)  # Size of file that downloaded so far .......
+  def __init__(self, parent):
+        QThread.__init__(self, parent)
+        self.MainCode = parent
+           
+        # method for class. ............
+        self.YTV_Checks = Thread_ChecksUV(self)
 
+        # Variables for app ...................
+        self.Link = ''
+        self.VideoFormat = ''
+        self.Format_Requested = ''
+        self.Video_folder = ''
+        self.The_link = ''
+        self.Requested_Sub_lang = ''
+        self.is_running = True
   
