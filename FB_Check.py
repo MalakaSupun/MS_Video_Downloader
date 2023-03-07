@@ -48,4 +48,33 @@ Not_In_Auto_Sub = []
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
+        # Parameters for application.....
+        self.Filtered_Auto_Subs = []
+        self.Available_Subs = []
+        self.Video_checked = 0
+        self.V240p_Size = " "
+        self.V360p_Size = " "
+        self.V480p_Size = " "
+        self.V720p_Size = " "
+        self.V1080p_Size = " "
+        self.Direct_Sub_Avalability = " "
+        self.Video_Duration = " "
+        self.YTV_ViewCount = 0000
+        self.Uploded_Date = " "
+        self.Yt_Channle = " "
+        self.Auto_Sub_Avalability = " "
+        self.Thumbnail_Link = " "
+        self.Thumbnail_URL = " "
+        self.YT_title = " "
+        self.BestV_Size = " "
+        self.BestV_Format = " "
+        self.V144p_Size = " "
+        self.Audio_Size = " "
+        self.Audio_Format = " "
+        self.The_link = " "
+        self.F_Requested = " "
+        # self.Formats = " "
+        self.Commands_for_subs = []
+        self.Filtered_Direct_Subs = []
+
 
