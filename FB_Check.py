@@ -77,4 +77,19 @@ Not_In_Auto_Sub = []
         self.Commands_for_subs = []
         self.Filtered_Direct_Subs = []
 
+    def run(self):
+        self.ClearLists()
+        self.MainCode.progressBar_YT_V.setValue(0)
+        self.MainCode.label_Pcomplete_UTV.setText("................... Video Checking ...................")
+        print("................... Video Checking ...................")
+
+        S_Time = time.perf_counter()         # Starting time...........
+        self.Set_Default_Labels()            # Update all labels........
+
+        self.F_Requested = self.MainCode.comboBox_Quality_YV.currentIndex()  # extracting qulity from UI.................
+        link = self.MainCode.lineEdit_YTV_link.text()                        # extracting link from UI...................
+        
+        if link != '':
+            self.The_link = link.replace('&', '"&"')                                  # Replacing & with "&".............
+            print(self.The_link)     
 
