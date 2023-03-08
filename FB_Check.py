@@ -41,9 +41,9 @@ Not_In_Direct_Sub = []
 # Not Available auto languages available for video.....
 Not_In_Auto_Sub = []
 
-  class Thread_ChecksUV(QThread):
+class Thread_ChecksUV(QThread):
     # Thread Signal for application....
-    countChanged = QtCore.pyqtSignal(int)
+    countChanged = QtCore.pyqtSignal(int)     # QT signal to be send.....
 
     def __init__(self, parent):
         QThread.__init__(self, parent)
