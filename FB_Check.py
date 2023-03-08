@@ -59,7 +59,7 @@ class Thread_ChecksUV(QThread):
         self.V1080p_Size = " "
         self.Direct_Sub_Avalability = " "
         self.Video_Duration = " "
-        self.YTV_ViewCount = 0000
+        self.YTV_ViewCount = 0
         self.Uploded_Date = " "
         self.Yt_Channle = " "
         self.Auto_Sub_Avalability = " "
@@ -91,5 +91,5 @@ class Thread_ChecksUV(QThread):
         
         if link != '':
             self.The_link = link.replace('&', '"&"')                                  # Replacing & with "&".............
-            print(self.The_link)     
+            print(self.The_link)                                                      # print the new link ..........
 
