@@ -38,3 +38,16 @@ class Thread_DownloadUP(QtCore.QThread):
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
+           
+           
+    def get_Video_info(self):
+       
+        ydl_opts = {'format': self.Formats, 'no_warnings': True, 'ignoreerrors': True}
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(self.The_link, download=False)
+            A = json.dumps(ydl.sanitize_info(info), indent=2)
+            B = json.loads(A)
+
+            self.isPlayList = B["_type"]
+            print(f"Your link is representing a : {self.isPlayList}")
+
