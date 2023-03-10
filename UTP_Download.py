@@ -49,5 +49,5 @@ class Thread_DownloadUP(QtCore.QThread):
             B = json.loads(A)
 
             self.isPlayList = B["_type"]
-            print(f"Your link is representing a : {self.isPlayList}")
+            print(f"Your link is representing a : {self.isPlayList}")       #Playlist name.....
 
