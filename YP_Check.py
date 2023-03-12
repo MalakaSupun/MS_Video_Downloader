@@ -136,7 +136,7 @@ class Thread_ChecksUP(QThread):
                         # Downloading the vidro thumbnail..........
                         ydl_opts = {'writethumbnail': True,
                                     'outtmpl': {'default': f'{Video_folder}/YoutubePlayListThumb.%(ext)s'},  # output folder.....
-                                    'skip_download': True, 'ignoreerrors': True, 'no_warnings': True
+                                    'skip_download': True, 'ignoreerrors': True, 'no_warnings': True         # skipping parts....
                                     }
 
                         with yt_dlp.YoutubeDL(ydl_opts) as ydl_YP:
@@ -145,12 +145,12 @@ class Thread_ChecksUP(QThread):
                             self.MainCode.Youtube_Pthumbnail.setPixmap(
                                 QPixmap(r'Thumbnail\Youtube_Video\YoutubeVideoThumb'))             # Loading Thumbnail....
                         except:
-                            self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\minis.png'))
+                            self.MainCode.Youtube_Pthumbnail.setPixmap(QPixmap(r'Icons\Tumbs\minis.png'))     # Loading Thumbnail....
 
-                except KeyError as key:
+                except KeyError as key: 
                     print(f"Error.......{key}...................")
-                except:
-                    print(f"Error..........................")
+                except: 
+                    print(f"Error..........................")   
             # IF THE LINK IS NOT FROM A PLAYLIST ..........        
             else:
                 print("Link is not of the Play List .........")
