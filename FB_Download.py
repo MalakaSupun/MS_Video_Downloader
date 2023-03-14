@@ -32,9 +32,9 @@ Formats = ['bestvideo*+bestaudio/best', 'bestaudio/best',                       
 
 
 def run(self):
-        self.VideoDownloaded = 0
+        self.VideoDownloaded = 0                         # variable for download status....
         link = self.MainCode.lineEdit_YTV_link.text()    # Link of the video.....
-        self.Link = link
+        self.Link = link                                 # link,,,,,
         if link != '':
             self.The_link = link.replace('&', '"&"')      # Replace link with & marks
             # print(self.The_link)
