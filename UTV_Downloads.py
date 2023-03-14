@@ -47,10 +47,10 @@ class Thread_DownloadUV(QtCore.QThread):
         self.Video_folder = ''
         self.The_link = ''
         self.Requested_Sub_lang = ''
-        self.is_running = True
+        self.is_running = True        # specifing the working state of the application....
 
     def run(self):
-        self.VideoDownloaded = 0
+        self.VideoDownloaded = 0      # setting downloaded video to 0............
         link = self.MainCode.lineEdit_YTV_link.text()    # Video Link .................................
         self.Link = link
 
@@ -146,12 +146,12 @@ class Thread_DownloadUV(QtCore.QThread):
                 with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                     ydl.download(self.The_link)
 
-            elif self.VideoFormat == 'bestaudio/best':
+            elif self.VideoFormat == 'bestaudio/best':                                              # Best aduio only.......
 
                 ydl_opts = {
-                    'noplaylist': True,
-                    'ignoreerrors': True,  'no_warnings': True,
-                    'format_sort': {'ext': True},
+                    'noplaylist': True,                                                            # stoping playlist downloads......
+                    'ignoreerrors': True,  'no_warnings': True,                                    # Ignorrors warnings and errors ....
+                    'format_sort': {'ext': True},                                                  # make format sort to work .....
                     'format': 'bestaudio/best',
                     'postprocessors': [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', }],
                     'outtmpl': {'default': f'{self.Video_folder}/%(title)s.%(ext)s'},
