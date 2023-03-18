@@ -64,13 +64,15 @@ class Thread_ChecksUP(QThread):
         # Setting status of the application .........
         self.Video_checked = 0
 
+# Get all the informations......................... 
 def get_Video_info(self):
        
-        ydl_opts = {'format': self.Formats, 'no_warnings': True, 'ignoreerrors': True}
+        ydl_opts = {'format': self.Formats, 'no_warnings': True, 'ignoreerrors': True}         # All options to get infroz...............
+           
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(self.The_link, download=False)
-            A = json.dumps(ydl.sanitize_info(info), indent=2)
-            B = json.loads(A)
+            A = json.dumps(ydl.sanitize_info(info), indent=2)                                 # Loading infor to a json.....
+            B = json.loads(A)                                                                 # Loading printing json.....
 
             self.isPlayList = B["_type"]
             print(f"Your link is representing a : {self.isPlayList}")
