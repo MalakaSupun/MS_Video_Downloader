@@ -42,7 +42,7 @@ class Thread_DownloadUP(QtCore.QThread):
            
     def get_Video_info(self):
        
-        ydl_opts = {'format': self.Formats, 'no_warnings': True, 'ignoreerrors': True}
+        ydl_opts = {'format': self.Formats, 'no_warnings': True, 'ignoreerrors': True} # optionsss
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(self.The_link, download=False)
             A = json.dumps(ydl.sanitize_info(info), indent=2)
