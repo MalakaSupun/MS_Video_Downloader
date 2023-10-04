@@ -48,6 +48,7 @@ class Thread_ChecksUV(QThread):
     def __init__(self, parent):
         QThread.__init__(self, parent)
         self.MainCode = parent
+               
         # Parameters for application.....
         self.Filtered_Auto_Subs = []
         self.Available_Subs = []
@@ -73,7 +74,6 @@ class Thread_ChecksUV(QThread):
         self.Audio_Format = " "
         self.The_link = " "
         self.F_Requested = " "
-        # self.Formats = " "
         self.Commands_for_subs = []
         self.Filtered_Direct_Subs = []
 
