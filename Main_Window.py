@@ -182,7 +182,7 @@ class MainWindow(QMainWindow):
     # Adding all the pictures for the App window ..........
     def Set_Thumbs_forTerminates(self):
         pic = 'Icons\Tumbs\LightingMQ.png'         # icon path....
-        pix = QPixmap(pic)
+        pix = QPixmap(pic)                         # Make a pixmap .....
        
         if self.tabWidget.currentIndex() == 0:
             self.Youtube_Vthumbnail.setPixmap(pix)
@@ -213,7 +213,7 @@ class MainWindow(QMainWindow):
         if Bs_3.isChecked():
             self.lineEdit_OV_Nname.setDisabled(False)
             self.label_15.setDisabled(False)
-            print('Checked - redioBTN_OV_AudioOnly')
+            print('Checked - redioBTN_OV_AudioOnly')   # Audio only option.......
         else:
             self.lineEdit_OV_Nname.setDisabled(True)
             self.label_15.setDisabled(True)
