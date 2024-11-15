@@ -90,7 +90,7 @@ def get_Video_info(self):
                     Date = B["modified_date"]
                     self.Uploaded_Date = f'{Date[0]}{Date[1]}{Date[2]}{Date[3]}/{Date[4]}{Date[5]}/{Date[6]}{Date[7]}'
                     self.channelName = B["channel"]
-
+# Adding Title bar name ......
                     self.MainCode.label_Title_YTP.setText(f'{self.YTP_title}')
                     self.MainCode.label_videoCount_YTP.setText(f'{self.YTP_VideoCount}')
                     self.MainCode.label_Channel_YTP.setText(f'{self.channelName}')
